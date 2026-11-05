@@ -1,0 +1,578 @@
+{
+ "versao": 1,
+ "chat_id": null,
+ "telegram_offset": 0,
+ "config": {
+  "origens": [
+   "FOR"
+  ],
+  "destinos": [],
+  "tipo": "ambos",
+  "milhas": true,
+  "bonus": false,
+  "preco_max": null,
+  "milhas_max": null,
+  "intervalo_horas": 12,
+  "limite_serpapi": 240,
+  "pausado": false
+ },
+ "vistos": [
+  "https://pontospravoar.com/?p=148130",
+  "https://pontospravoar.com/?p=148201",
+  "https://pontospravoar.com/?p=148172",
+  "https://pontospravoar.com/?p=148198",
+  "https://pontospravoar.com/?p=148232",
+  "https://pontospravoar.com/?p=148251",
+  "https://pontospravoar.com/?p=148185",
+  "https://pontospravoar.com/?p=148097",
+  "https://pontospravoar.com/?p=148215",
+  "https://pontospravoar.com/?p=147907",
+  "https://pontospravoar.com/?p=148194",
+  "https://pontospravoar.com/?p=148289",
+  "https://pontospravoar.com/?p=148250",
+  "https://pontospravoar.com/?p=148306",
+  "https://pontospravoar.com/?p=145059",
+  "https://pontospravoar.com/?p=148329",
+  "https://pontospravoar.com/?p=148281",
+  "https://pontospravoar.com/?p=148348",
+  "https://pontospravoar.com/?p=148286",
+  "https://pontospravoar.com/?p=148397",
+  "https://passageirodeprimeira.com/?p=579126",
+  "https://passageirodeprimeira.com/?p=579280",
+  "https://passageirodeprimeira.com/?p=579225",
+  "https://passageirodeprimeira.com/?p=579237",
+  "https://passageirodeprimeira.com/?p=578535",
+  "https://passageirodeprimeira.com/?p=579323",
+  "https://passageirodeprimeira.com/?p=579300",
+  "https://passageirodeprimeira.com/?p=579253",
+  "https://passageirodeprimeira.com/?p=579393",
+  "https://passageirodeprimeira.com/?p=433724",
+  "https://passageirodeprimeira.com/?p=577558",
+  "https://passageirodeprimeira.com/?p=579423",
+  "https://passageirodeprimeira.com/?p=325795",
+  "https://passageirodeprimeira.com/?p=579451",
+  "https://passageirodeprimeira.com/?p=579489",
+  "https://passageirodeprimeira.com/?p=579470",
+  "https://passageirodeprimeira.com/?p=579486",
+  "https://passageirodeprimeira.com/?p=579498",
+  "https://passageirodeprimeira.com/?p=579578",
+  "https://passageirodeprimeira.com/?p=579624",
+  "https://passageirodeprimeira.com/?p=309816",
+  "https://passageirodeprimeira.com/?p=579662",
+  "https://passageirodeprimeira.com/?p=579622",
+  "https://passageirodeprimeira.com/?p=579485",
+  "https://passageirodeprimeira.com/?p=579331",
+  "https://passageirodeprimeira.com/?p=579522",
+  "https://passageirodeprimeira.com/?p=579011",
+  "https://passageirodeprimeira.com/?p=579664",
+  "https://passageirodeprimeira.com/?p=579762",
+  "https://passageirodeprimeira.com/?p=578210",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645636",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645663",
+  "https://www.melhoresdestinos.com.br/?p=645605",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645667",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645702",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645609",
+  "https://www.melhoresdestinos.com.br/?p=645497",
+  "https://www.melhoresdestinos.com.br/?p=645553",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645800",
+  "https://www.melhoresdestinos.com.br/?p=645695"
+ ],
+ "feeds_iniciados": true,
+ "recentes": [
+  {
+   "id": "https://pontospravoar.com/?p=148130",
+   "titulo": "Black Friday ALL Accor: ganhe bônus e 20% de points back na transferência da Esfera",
+   "link": "https://pontospravoar.com/black-friday-all-accor-ganhe-bonus-20-porcento-points-back-transferencia-esfera/",
+   "texto": "Aproveite a nova oferta da Black Friday do ALL Accor! Desta vez, os associados do programa podem ganhar bônus na transferência de pontos da Esfera e 20% de points back. Assim, você pode aproveitar o bônus no ALL Accor e ainda manter saldo de pontos na Esfera para futuras promoções. Esfera e ALL Accor Os…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 13:02:27 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148201",
+   "titulo": "Mais um aumento! LATAM Pass encarece resgates na tabela fixa",
+   "link": "https://pontospravoar.com/mais-um-aumento-latam-pass-encarece-resgates-na-tabela-fixa/",
+   "texto": "Mais uma vez, o LATAM Pass vai encarecer as emissões de passagens com milhas em companhias aéreas parceiras por meio da tabela fixa. Os novos valores entram em vigor em 23 de novembro de 2026 e trazem aumentos de até 20% em diferentes combinações de regiões, nas cabines econômica, premium economy, executiva e primeira classe.…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 13:11:59 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148172",
+   "titulo": "Azul Fidelidade e Uau CAIXA com até 120% de bônus na transferência de pontos",
+   "link": "https://pontospravoar.com/azul-fidelidade-uau-caixa-ate-120-porcento-bonus-transferencia-pontos/",
+   "texto": "O Azul Fidelidade está com uma nova promoção em parceria com a Uau CAIXA, oferecendo até 120% de bônus na transferência de pontos. Uma oportunidade para quem deseja aumentar seu saldo e planejar futuras viagens utilizando pontos! Confira as condições da campanha e saiba como aproveitar. Promoção Azul Fidelidade e Uau Caixa Para esta campanha,…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 14:00:59 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148198",
+   "titulo": "Air France anuncia novo cardápio assinado por chef com duas estrelas Michelin",
+   "link": "https://pontospravoar.com/air-france-anuncia-novo-cardapio-assinado-por-chef-com-duas-estrelas-michelin/",
+   "texto": "A Air France vai renovar o cardápio da classe executiva em voos que partem do Caribe francês e da Guiana Francesa com pratos assinados pelo chef Louis-Philippe Vigilant. A novidade começa em 1º de novembro de 2026 e estará disponível nas ligações de Pointe-à-Pitre, Fort-de-France, Saint-Martin e Caiena para Paris, além de algumas rotas regionais…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 14:30:39 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148232",
+   "titulo": "LATAM Pass e PicPay oferecem 25% de bônus na transferência de pontos",
+   "link": "https://pontospravoar.com/latam-pass-picpay-oferecem-25-porcento-bonus-transferencia-pontos/",
+   "texto": "Quer turbinar seu saldo de milhas LATAM Pass? O programa lançou uma nova promoção em parceria com o PicPay, oferecendo 25% de bônus na transferência de pontos entre os programas. Quem realizar sua primeira transferência ainda poderá garantir 1.000 milhas extras! A campanha é válida até 6 de novembro de 2026. Confira as condições e…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 15:00:46 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148251",
+   "titulo": "Lufthansa formaliza aquisição de 44,9% da TAP; Brasil está entre os principais mercados",
+   "link": "https://pontospravoar.com/lufthansa-formaliza-aquisicao-de-449-da-tap-brasil-esta-entre-os-principais-mercados/",
+   "texto": "A Lufthansa e o governo português assinaram nesta terça-feira (3) o acordo para a venda de 44,9% da TAP Air Portugal ao grupo alemão. Avaliada em € 1,025 bilhão (cerca de R$ 6,3 bilhões), a operação ainda depende da aprovação da Comissão Europeia. Com a aquisição, a Lufthansa quer ampliar sua atuação nas rotas entre…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 15:30:06 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148185",
+   "titulo": "Livelo oferece 25 mil pontos para novas assinaturas do Clube Essencial",
+   "link": "https://pontospravoar.com/livelo-oferece-25-mil-pontos-novas-assinaturas-clube-essencial/",
+   "texto": "Quer aumentar seu saldo de pontos Livelo? A Livelo está com uma nova promoção para quem deseja assinar o Clube Essencial, permitindo que novos assinantes acumulem 25 mil pontos, tanto na modalidade mensal quanto na anual. A oferta fica disponível somente até amanhã, 5 de novembro de 2026! Confira os valores, as condições da campanha…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 16:00:43 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148097",
+   "titulo": "Elo oferece até 60 mil pontos bônus ao atingir metas de gastos no cartão",
+   "link": "https://pontospravoar.com/elo-oferece-ate-60-mil-pontos-bonus-ao-atingir-metas-de-gastos-no-cartao/",
+   "texto": "Que tal transformar seus gastos do dia a dia em pontos extras? A Elo lançou uma nova campanha para clientes de cartões elegíveis, oferecendo a possibilidade de acumular até 60 mil pontos bônus ao atingir metas de gastos. A promoção é válida de 3 a 30 de novembro de 2026, com bonificações que variam conforme…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 16:30:47 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148215",
+   "titulo": "Alerta PPV! Destinos internacionais a partir de 17.800 pontos Azul Fidelidade",
+   "link": "https://pontospravoar.com/alerta-ppv-destinos-internacionais-17800-pontos-azul-fidelidade/",
+   "texto": "Que tal começar a planejar sua próxima viagem internacional utilizando pontos? No alerta de passagens PPV de hoje, nossa equipe selecionou oportunidades para conhecer diferentes destinos ao redor do mundo com o Azul Fidelidade, com emissões a partir de 17.800 pontos + taxas. Confira os trechos e as datas disponíveis e aproveite para tirar sua…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 17:00:39 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=147907",
+   "titulo": "Flying Blue é eleito o melhor programa de fidelidade aéreo do mundo pelo terceiro ano seguido",
+   "link": "https://pontospravoar.com/flying-blue-e-eleito-o-melhor-programa-de-fidelidade-aereo-do-mundo-pelo-terceiro-ano-seguido/",
+   "texto": "O Flying Blue, programa de fidelidade da Air France-KLM, conquistou pelo terceiro ano consecutivo o título de melhor programa de fidelidade aéreo do mundo. O resultado vem do ranking 2026 da point.me, plataforma especializada em busca de passagens-prêmio. Flying Blue lidera entre 33 programas avaliados O Flying Blue ficou na primeira posição do relatório anual…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 17:30:41 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148194",
+   "titulo": "Quartou com desconto! Shell Box oferece até R$ 7 OFF no abastecimento",
+   "link": "https://pontospravoar.com/quartou-desconto-shell-box-oferece-ate-7-reais-off-abastecimento/",
+   "texto": "Quartou com economia no abastecimento! O Shell Box está oferecendo R$ 0,10 de desconto por litro de combustível, permitindo economizar até R$ 7 por abastecimento. Uma oportunidade para aliviar um pouquinho os gastos na hora de encher o tanque! Confira as condições da promoção, saiba quem pode participar e veja como aproveitar o benefício. Como…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 18:00:40 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148289",
+   "titulo": "ITA Airways registra lucro operacional de € 94 milhões no terceiro trimestre",
+   "link": "https://pontospravoar.com/ita-airways-registra-lucro-operacional-de-e-94-milhoes-no-terceiro-trimestre/",
+   "texto": "A ITA Airways encerrou o terceiro trimestre de 2026 com receita de € 995 milhões, alta de 6% em relação ao mesmo período do ano passado; já o lucro operacional (EBIT) chegou a € 94 milhões, mantendo resultado positivo e em linha com o registrado no terceiro trimestre de 2025. Receita supera € 2,5 bilhões…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 18:30:29 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148250",
+   "titulo": "Alerta PPV! Confira destinos pelo Brasil a partir de 8.000 milhas Smiles",
+   "link": "https://pontospravoar.com/alerta-ppv-confira-destinos-brasil-8000-milhas-smiles/",
+   "texto": "Quer planejar sua próxima viagem pelo Brasil utilizando milhas? No Alerta de Passagens PPV de hoje, nossa equipe selecionou oportunidades para conhecer diferentes destinos nacionais com a Smiles, com emissões a partir de 8.000 milhas + taxas. Confira os trechos e as datas disponíveis e aproveite para organizar sua próxima viagem! Passagens com milhas Smiles…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 19:00:54 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148306",
+   "titulo": "Delta mantém título de melhor aérea dos EUA e SkyMiles é eleito melhor programa de fidelidade",
+   "link": "https://pontospravoar.com/delta-mantem-titulo-de-melhor-aerea-dos-eua-e-skymiles-e-eleito-melhor-programa-de-fidelidade/",
+   "texto": "A Delta Air Lines foi eleita a melhor companhia aérea dos Estados Unidos pelo Forbes Travel Guide pelo terceiro ano consecutivo. O reconhecimento faz parte do Verified Air Travel Awards 2026, premiação que destacou o serviço premium da empresa, a satisfação dos passageiros e o desempenho em pontualidade. Companhia também vence em outras cinco categorias…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 19:30:15 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=145059",
+   "titulo": "Compartilhando Emissões: Osaka para Helsinque em classe executiva com a JAL",
+   "link": "https://pontospravoar.com/compartilhando-emissoes-osaka-helsinque-classe-executiva-jal/",
+   "texto": "Dando sequência à série “Compartilhando Emissões” aqui no Pontos pra Voar, iremos continuar a falar sobre uma sequência de emissões que realizei, sendo neste post para uma viagem de Osaka para Helsinque para três passageiros, voando na classe executiva da JAL (Japan Airlines), utilizando milhas do programa AAdvantage. Introdução Em primeiro lugar, gostaria de relembrar…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 20:00:09 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148329",
+   "titulo": "JetBlue aumenta novamente o preço da bagagem despachada",
+   "link": "https://pontospravoar.com/jetblue-aumenta-novamente-o-preco-da-bagagem-despachada/",
+   "texto": "A JetBlue aumentou mais uma vez o preço da bagagem despachada em voos domésticos nos Estados Unidos. A nova tabela entrou em vigor em 3 de novembro de 2026 e estabelece cobranças de até US$ 70 pela primeira mala, dependendo da época da viagem e do momento em que o passageiro realiza o pagamento. Primeira…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 20:30:14 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148281",
+   "titulo": "Reserve hotéis próximos à Avenida Paulista com diárias a partir de R$ 185",
+   "link": "https://pontospravoar.com/reserve-hoteis-proximos-avenida-paulista-diarias-185-reais/",
+   "texto": "Planejando sua próxima visita a capital paulista e quer se hospedar próximo à Avenida Paulista? Confira neste artigo, opções de hotéis em São Paulo com diárias a partir de R$ 185. Vamos aos detalhes! Hotéis próximos à Avenida Paulista em São Paulo Na tabela abaixo, você encontra nossa sugestão de hotéis Accor na região da…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 21:00:07 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148348",
+   "titulo": "Alerta PPV! Confira destinos no Sul do Brasil a partir de 5 mil milhas LATAM Pass",
+   "link": "https://pontospravoar.com/alerta-ppv-confira-destinos-no-sul-do-brasil-a-partir-de-5-mil-milhas-latam-pass/",
+   "texto": "No Alerta de Passagens PPV de hoje, nossa equipe selecionou opções de voos para destinos no Sul do Brasil, com emissões pelo LATAM Pass a partir de 5 mil milhas + taxas. Confira os trechos e as datas disponíveis e aproveite para planejar sua próxima viagem para a região! Passagens nacionais no LATAM Pass Para…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 21:30:11 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148286",
+   "titulo": "Receba mais de 400 alertas de emissões direto no seu celular no grupo do PPV",
+   "link": "https://pontospravoar.com/receba-mais-400-alertas-emissoes-direto-seu-celular-grupo-ppv/",
+   "texto": "Quer aproveitar as melhores emissões sem ficar perdendo horas realizando buscas? O grupo de emissões do PPV é perfeito para você. Compartilhamos mais de 400 alertas durante o mês, entre destinos nacionais e internacionais, em todas as cabines. Além disso, você conta com monitores para tirar suas dúvidas. Monitores disponíveis para dúvidas Nos nossos grupos,…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 22:00:54 +0000"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=148397",
+   "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 4 de novembro de 2026",
+   "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-4-novembro-2026/",
+   "texto": "Aproveite a quarta-feira para turbinar seu saldo de pontos e milhas! Na edição do Radar PPV de hoje, nossa equipe reuniu todas as ofertas disponíveis, com destaque para Livelo e Esfera, que deram início a diversas ofertas de acúmulo turbinado. Promoções de acúmulo de pontos ¹ pontos por dólar. Promoções de transferência de pontos Compra…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 04 Nov 2026 23:00:19 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579126",
+   "titulo": "Hotéis na Espanha com até 36% de desconto na Hoteis.com",
+   "link": "https://passageirodeprimeira.com/hoteis-espanha-com-ate-36-desconto-hoteis-com/",
+   "texto": "Nesta matéria, vamos apresentar 5 hotéis na Espanha com até 36% de desconto na Hoteis.com! Na oferta, ainda é possível aproveitar o cupom de 6% de desconto exclusivo do PP, além de parcelar em até 12x sem juros. Confira! O post Hotéis na Espanha com até 36% de desconto na Hoteis.com apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 16:20:37 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579280",
+   "titulo": "Transfira pontos Livelo + dinheiro para a Azul – milheiro a partir de R$ 11,86",
+   "link": "https://passageirodeprimeira.com/transfira-pontos-livelo-dinheiro-para-a-azul-milheiro-a-partir-de-r-1178/",
+   "texto": "A Livelo está com uma oferta imperdível para transferências para o Azul Fidelidade, permitindo gerar 1.000 milhas a partir de R$ 11,78 na modalidade pontos + dinheiro. Até sexta-feira (6), assinantes do Clube Azul podem garantir até 100% de bônus, além de até 30% extra dependendo do tempo de adesão ao clube. Não perca a chance de acumular milhas com um CPM super atrativo! O post Transfira pontos Livelo + dinheiro para a Azul – milheiro a partir de R$ 11,86 apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 16:59:39 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579225",
+   "titulo": "5 sugestões de voos internacionais a partir de 54 mil milhas Smiles + taxas",
+   "link": "https://passageirodeprimeira.com/5-sugestoes-de-voos-internacionais-a-partir-de-54-mil-milhas-smiles-taxas/",
+   "texto": "Pensando em viajar para o exterior mas ainda não tem certeza do seu destino? 🛫 Nesta matéria, sugerimos 5 opções de resgates de voos internacionais a partir de 54.000 milhas Smiles por trecho, partindo de diferentes aeroportos brasileiros e para diferentes destinos. O post 5 sugestões de voos internacionais a partir de 54 mil milhas Smiles + taxas apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 17:40:30 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579237",
+   "titulo": "Livelo oferece até 56% de desconto na compra de pontos para assinantes do Clube – milheiro a partir de R$ 29,87",
+   "link": "https://passageirodeprimeira.com/livelo-oferece-ate-56-desconto-compra-pontos-para-assinantes-clube-milheiro-a-partir-r-2987/",
+   "texto": "Até sexta-feira (6), o programa está oferecendo até 56% de desconto na compra de pontos para assinantes do Clube. A campanha conta com o parcelamento em até 12x sem juros para compras acima de R$ 240,00 e também oferta 3% de desconto no pagamento feito via Pix. Confira! O post Livelo oferece até 56% de desconto na compra de pontos para assinantes do Clube – milheiro a partir de R$ 29,87 apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 18:17:59 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=578535",
+   "titulo": "5 dicas de ouro para aproveitar ao máximo as ofertas da Pink Friday da Livelo",
+   "link": "https://passageirodeprimeira.com/pink-friday-livelo-5-dicas-ofertas/",
+   "texto": "A Pink Friday da Livelo chegou com ofertas para juntar mais pontos e fazer bons resgates. Confira 5 dicas para aproveitar as promoções ao longo de novembro. O post 5 dicas de ouro para aproveitar ao máximo as ofertas da Pink Friday da Livelo apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 18:50:40 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579323",
+   "titulo": "Azul tem passagens nacionais a partir de R$ 47 ou de 3.250 pontos + taxas",
+   "link": "https://passageirodeprimeira.com/azul-tem-passagens-nacionais-a-partir-de-r-47-ou-de-3-250-pontos-taxas/",
+   "texto": "Alerta de disponibilidade! A Azul está com passagens nacionais a partir de 3.250 pontos + taxas ou R$ 47,12 + taxas na modalidade pontos + dinheiro. Além disso, você pode transferir pontos da Livelo para o programa de fidelidade com até 130% de bônus até sexta-feira (6). O post Azul tem passagens nacionais a partir de R$ 47 ou de 3.250 pontos + taxas apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 19:32:06 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579300",
+   "titulo": "Ganhe 60 mil pontos bônus na assinatura ou atualização do Clube Esfera",
+   "link": "https://passageirodeprimeira.com/ganhe-60-mil-pontos-bonus-assinatura-atualizacao-clube-esfera/",
+   "texto": "A Esfera está oferecendo até 60.000 pontos bônus para quem realizar a assinatura ou upgrade de plano do Clube Esfera. Os bônus serão creditados em 12 parcelas mensais ao longo de 1 ano de assinatura. A campanha é válida até a sexta-feira (20). O post Ganhe 60 mil pontos bônus na assinatura ou atualização do Clube Esfera apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 20:00:29 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579253",
+   "titulo": "Azul Fidelidade oferece até 14 pontos por real gasto no Magalu",
+   "link": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-14-pontos-por-real-gasto-no-magalu-8/",
+   "texto": "A Azul Fidelidade está oferecendo até 14 pontos por real gasto no Magalu até sábado (7). Assinantes do Clube Azul acumulam 14 pontos por real, enquanto demais clientes ganham 8 pontos. Lembre-se de que a promoção é válida apenas para produtos selecionados e compras realizadas pelo site oficial. O post Azul Fidelidade oferece até 14 pontos por real gasto no Magalu apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 20:35:19 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579393",
+   "titulo": "LATAM prorroga pontuação turbinada do cartão LATAM Pass Itaú",
+   "link": "https://passageirodeprimeira.com/latam-prorroga-pontuacao-turbinada-do-cartao-latam-pass-itau/",
+   "texto": "A LATAM prorrogou a campanha de pontuação turbinada do cartão LATAM Pass Itaú até 30 de novembro de 2026, oferecendo até 5,25 pontos por dólar gasto. O post LATAM prorroga pontuação turbinada do cartão LATAM Pass Itaú apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 21:00:45 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=433724",
+   "titulo": "Ganhe 3 meses do AwardWallet Plus e assuma o controle das suas milhas",
+   "link": "https://passageirodeprimeira.com/ganhe-3-meses-awardwallet/",
+   "texto": "Ganhe 3 meses do AwardWallet Plus e assuma o controle das suas milhas O post Ganhe 3 meses do AwardWallet Plus e assuma o controle das suas milhas apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 21:30:35 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=577558",
+   "titulo": "É amanhã! Está chegando a maior Black November dos Alertas do PP",
+   "link": "https://passageirodeprimeira.com/black-november-alertas-pp-grupo-gratis/",
+   "texto": "Prepare-se para a Black November dos Alertas do PP. Entre no grupo grátis para acompanhar as novidades da campanha e já receber uma seleção de oportunidades de passagens com milhas no WhatsApp. O post É amanhã! Está chegando a maior Black November dos Alertas do PP apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Tue, 03 Nov 2026 22:00:58 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579423",
+   "titulo": "Pré Black Friday! Envie pontos Esfera para o ALL Accor e ganhe 20% de pontos de volta + até 10% de bônus",
+   "link": "https://passageirodeprimeira.com/pre-black-friday-envie-pontos-esfera-para-o-all-accor-e-ganhe-20-de-pontos-de-volta-ate-10-de-bonus/",
+   "texto": "Até sexta-feira (6), quem transferir pontos Esfera para o programa ALL Accor recebe 20% de pontos de volta e, se for assinante do ALL Signature, ainda ganha 10% de bônus. É uma ótima oportunidade para acumular pontos e aproveitar as vantagens do programa. Não perca essa chance de maximizar seus pontos! O post Pré Black Friday! Envie pontos Esfera para o ALL Accor e ganhe 20% de pontos de volta + até 10% de bônus apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 11:00:31 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=325795",
+   "titulo": "Como acumular Avios no Iberia Club",
+   "link": "https://passageirodeprimeira.com/como-acumular-avios-no-iberia-plus/",
+   "texto": "Quer acumular Avios no Iberia Club? Descubra como transferir pontos de instituições financeiras como Livelo, Esfera e Revolut, além de aproveitar parcerias com redes hoteleiras para potencializar seus ganhos. Nesta matéria, mostramos as principais formas de juntar milhas e turbinar suas viagens. O post Como acumular Avios no Iberia Club apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 11:40:30 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579451",
+   "titulo": "Muito barato! Azul oferece trecho para Lisboa a partir de 77 mil pontos ou R$ 918 + taxas",
+   "link": "https://passageirodeprimeira.com/azul-oferece-trecho-para-lisboa-a-partir-77-mil-pontos-ou-r-918-taxas/",
+   "texto": "Alerta direto dos Grupos do PP no WhatsApp! 🚨 Encontramos disponibilidade de bilhetes ida e volta entre Campinas (VCP) e Lisboa (LIS) a partir de 77.600 pontos Azul Fidelidade ou R$ 918,84 + taxas por trecho com a Azul. O post Muito barato! Azul oferece trecho para Lisboa a partir de 77 mil pontos ou R$ 918 + taxas apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 12:09:45 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579489",
+   "titulo": "LATAM Pass vai reajustar tabela fixa de resgate com companhias parceiras",
+   "link": "https://passageirodeprimeira.com/latam-pass-vai-reajustar-tabela-fixa-de-resgate-com-companhias-parceiras-2/",
+   "texto": "O LATAM Pass acaba de disponibilizar uma nova tabela de resgate de passagens com pontos em companhias parceiras. O post LATAM Pass vai reajustar tabela fixa de resgate com companhias parceiras apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 12:52:44 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579470",
+   "titulo": "Clube Livelo Days! Acumule até 15 pontos por real gasto na Mondaine, Insider e mais parceiros",
+   "link": "https://passageirodeprimeira.com/clube-livelo-days-acumule-ate-15-pontos-real-gasto-mondaine-insider-mais-parceiros/",
+   "texto": "A Livelo está oferecendo até 15 pontos por real gasto na Mondaine, Insider e mais parceiros. As ofertas contam com pontuações diferentes. Confira! O post Clube Livelo Days! Acumule até 15 pontos por real gasto na Mondaine, Insider e mais parceiros apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 14:05:03 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579486",
+   "titulo": "Azul oferece até 120% de bônus nas transferências de pontos do UAU Caixa",
+   "link": "https://passageirodeprimeira.com/azul-oferece-ate-120-bonus-transferencias-pontos-uau-caixa/",
+   "texto": "O Azul Fidelidade está oferecendo até 90% de bônus nas transferências de pontos do UAU Caixa. Além disso, o programa está ofertando mais até 30% de bônus extra para assinantes do Clube Azul. A oferta é válida até amanhã (5). Confira! O post Azul oferece até 120% de bônus nas transferências de pontos do UAU Caixa apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 14:30:45 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579498",
+   "titulo": "Receba 25.000 pontos ao assinar o Clube Livelo Essencial – Milheiro a partir de R$ 21,55",
+   "link": "https://passageirodeprimeira.com/receba-25-000-pontos-ao-assinar-o-clube-livelo-essencial-milheiro-a-partir-de-r-2155/",
+   "texto": "[Oferta] Muito bom! O Clube Livelo está oferecendo 13.000 pontos bônus para novas assinaturas do Clube Essencial, totalizando 25.000 pontos ao longo de 12 meses, com milheiro a partir de R$ 21,55. A promoção é válida até amanhã (5), então não perca! O post Receba 25.000 pontos ao assinar o Clube Livelo Essencial – Milheiro a partir de R$ 21,55 apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 15:00:09 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579578",
+   "titulo": "LATAM Pass oferece 25% de bônus na transferência de pontos do PicPay",
+   "link": "https://passageirodeprimeira.com/latam-pass-oferece-25-de-bonus-na-transferencia-de-pontos-do-picpay/",
+   "texto": "O LATAM Pass está oferecendo 25% de milhas bônus nas transferências do PicPay. A campanha é válida até sexta-feira (6) e, na primeira transferência de pontos para o LATAM Pass, você recebe 1.000 milhas adicionais. O post LATAM Pass oferece 25% de bônus na transferência de pontos do PicPay apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 15:11:22 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579624",
+   "titulo": "Temporal suspende operações no Aeroporto de Chapecó por tempo indeterminado",
+   "link": "https://passageirodeprimeira.com/temporal-suspende-operacoes-no-aeroporto-de-chapeco-por-tempo-indeterminado/",
+   "texto": "[Notícia] O Aeroporto de Chapecó (XAP) suspendeu suas operações por tempo indeterminado devido a danos causados por uma forte tempestade nesta quarta-feira (4). A concessionária Voe Xap orienta os passageiros a não se dirigirem ao terminal e a entrarem em contato com suas companhias aéreas para informações sobre voos. Novas atualizações serão divulgadas nas redes sociais da concessionária. O post Temporal suspende operações no Aeroporto de Chapecó por tempo indeterminado apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 15:43:45 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=309816",
+   "titulo": "Como preencher o CheckMig – Formulário obrigatório para entrada na Colômbia",
+   "link": "https://passageirodeprimeira.com/checkmig-formulario-colombia/",
+   "texto": "Nesta matéria, iremos mostrar o passo a passo completo de como preencher o CheckMig, formulário obrigatório para entrada na Colômbia. O post Como preencher o CheckMig – Formulário obrigatório para entrada na Colômbia apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 16:15:23 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579662",
+   "titulo": "Ganhe 10 mil milhas bônus assinando o Clube Smiles 1.000 – Milheiro a partir de R$ 15,52",
+   "link": "https://passageirodeprimeira.com/ganhe-10-mil-milhas-bonus-assinando-o-clube-smiles-1-000-milheiro-a-partir-de-r-1552/",
+   "texto": "A Smiles está oferecendo até 10 mil milhas bônus para quem realizar a contratação do Clube no Plano 1.000. Com a oferta, que é válida até 21h do dia 30 de novembro, é possível gerar o milheiro a partir de R$ 15,52. O post Ganhe 10 mil milhas bônus assinando o Clube Smiles 1.000 – Milheiro a partir de R$ 15,52 apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 17:00:53 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579622",
+   "titulo": "Voe para João Pessoa a partir de R$ 130 ou 10 mil pontos Azul + taxas",
+   "link": "https://passageirodeprimeira.com/voe-para-joao-pessoa-a-partir-de-r-130-ou-10-mil-pontos-azul-taxas/",
+   "texto": "Alerta de disponibilidade! Encontramos passagens de Belo Horizonte (CNF) para João Pessoa (JPA) a partir de 10.140 pontos Azul + taxas, ou a partir de R$ 130,46 + taxas na modalidade pontos + dinheiro. Aproveite a promoção de transferência de pontos da Livelo com até 130% de bônus, válida até sexta-feira (6). O post Voe para João Pessoa a partir de R$ 130 ou 10 mil pontos Azul + taxas apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 17:40:37 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579485",
+   "titulo": "Lufthansa assina compra de 44,9% da TAP por R$ 6 bilhões",
+   "link": "https://passageirodeprimeira.com/lufthansa-assina-compra-de-449-da-tap-por-r-6-bilhoes/",
+   "texto": "Ontem (3), o Grupo Lufthansa e o governo português formalizaram o acordo para a aquisição de uma participação minoritária inicial de 44,9% na TAP Air Portugal. A cerimônia ocorreu no Aeroporto Humberto Delgado, em Lisboa, e selou a transação inicial de 1,025 bilhão de euros (cerca de R$ 6,3 bilhões), valor que pode atingir até 1,2 bilhão de euros (aproximadamente R$ 7,4 bilhões) com ajustes contratuais e ações de colaboradores. O post Lufthansa assina compra de 44,9% da TAP por R$ 6 bilhões apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 18:30:57 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579331",
+   "titulo": "Finnair Plus oferece até 50% de desconto na compra de Avios",
+   "link": "https://passageirodeprimeira.com/finnair-plus-oferece-50-de-desconto-na-compra-de-avios/",
+   "texto": "O Finnair Plus, programa de pontos da Finnair, está oferecendo até 50% de desconto na compra de Avios. A promoção é válida até dia 16 de novembro. O post Finnair Plus oferece até 50% de desconto na compra de Avios apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 19:10:10 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579522",
+   "titulo": "Até amanhã! Livelo oferece 20% de desconto na emissão de voos para Itália",
+   "link": "https://passageirodeprimeira.com/ate-amanha-livelo-oferece-20-desconto-emissao-voos-italia/",
+   "texto": "A Livelo está oferecendo 20% de desconto na emissão de passagens aéreas para diferentes cidades da Itália. A oferta, que é válida até amanhã (5), está disponível para os membros do Clube Livelo. A oferta não depende da utilização de nenhum cupom no momento da emissão. O post Até amanhã! Livelo oferece 20% de desconto na emissão de voos para Itália apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 19:52:40 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579011",
+   "titulo": "Lufthansa oferece 50% de desconto na tarifa de passagens para crianças",
+   "link": "https://passageirodeprimeira.com/lufthansa-oferece-50-de-desconto-na-tarifa-de-passagens-para-criancas/",
+   "texto": "A Lufthansa está oferecendo 50% de desconto na tarifa de passagens aéreas para crianças de 2 a 11 anos até 15 de novembro. A promoção é válida para voos na Classe Econômica entre 12 de janeiro e 30 de abril de 2027, com emissão de passagens entre 2 e 15 de novembro de 2026. O desconto se aplica automaticamente, sem necessidade de código promocional. O post Lufthansa oferece 50% de desconto na tarifa de passagens para crianças apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 20:30:23 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579664",
+   "titulo": "Ganhe até 40% de desconto em reservas de hotéis ao redor do mundo",
+   "link": "https://passageirodeprimeira.com/ganhe-ate-40-desconto-reservas-hoteis-redor-mundo/",
+   "texto": "Até a sexta-feira (6), é possível reservar acomodações com até 40% de desconto (ou mais) na Hoteis.com + 6% off com nosso cupom exclusivo. O post Ganhe até 40% de desconto em reservas de hotéis ao redor do mundo apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 21:24:09 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=579762",
+   "titulo": "Azul voa de Belo Horizonte para Orlando com A330 que pertencia a American Airlines com cabine Azul Comfort",
+   "link": "https://passageirodeprimeira.com/azul-voa-de-belo-horizonte-para-orlando-com-a330-que-pertencia-a-american-airlines-com-cabine-azul-comfort/",
+   "texto": "A partir deste mês, a Azul passa a operar os voos entre Belo Horizonte (CNF) e Orlando (MCO) com aeronaves A330 de sua frota própria, encerrando o regime de wet-lease com a EuroAtlantic nesta rota. O primeiro voo após a mudança foi realizado com um dos A330 ex-American Airlines, equipado com a Azul Comfort, cabine Econômica Premium situada entre a Executiva e a Econômica. O post Azul voa de Belo Horizonte para Orlando com A330 que pertencia a American Airlines com cabine Azul Comfort apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Wed, 04 Nov 2026 22:00:35 +0000"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=578210",
+   "titulo": "Black November do PP: Ganhe 6 Meses Grátis de Alertas de Viagem",
+   "link": "https://passageirodeprimeira.com/black-november-alertas-de-viagem-6-meses-gratis/",
+   "texto": "Muito bom! Na Black November dos Alertas do PP, ao assinar o plano anual, você ganha 6 meses extras grátis, totalizando 18 meses de acesso pelo preço de 12. A promoção é válida apenas até amanhã, dia 05. O post Black November do PP: Ganhe 6 Meses Grátis de Alertas de Viagem apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Thu, 05 Nov 2026 00:12:56 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645636",
+   "titulo": "Morro de São Paulo! Pacotes com voos + hotel pé na areia a partir de R$ 2.048 por pessoa mais cupom de até R$ 600 OFF",
+   "link": "https://www.melhoresdestinos.com.br/promocao/morro-de-sao-paulo-hospedagem-pacotes-04nov26",
+   "texto": "Morro de São Paulo é um daqueles destinos que conquistam logo à primeira vista. Com praias de águas claras, coqueirais, clima descontraído e ruas sem carros, o vilarejo oferece o equilíbrio perfeito entre descanso e diversão. Aproveite o melhor do destino reservando sua experiência à beira-mar no Patachocas, que está com pacotes a partir de…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 12:17:49 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645663",
+   "titulo": "Últimos dias! Promoção da Booking tem hospedagens com até 40% OFF e mais 6% de cashback exclusivo",
+   "link": "https://www.melhoresdestinos.com.br/promocao/booking-cashback-novembro-2026",
+   "texto": "Ainda dá tempo de aproveitar a promoção da Booking.com, o maior site de reservas de hospedagens do mundo, com 6% de cashback exclusivo para os leitores do Melhores Destinos. Além disso, você encontra descontos de até 40% em hotéis, pousadas, resorts e apartamentos, cumulativos com o cashback. Para garantir seu cashback basta acessar o site…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 13:14:15 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?p=645605",
+   "titulo": "Com problemas no cruzeiro inaugural, Corazul vai reembolsar 100% os passageiros pagantes",
+   "link": "https://www.melhoresdestinos.com.br/corazul-reembolso-passageiros.html",
+   "texto": "A Corazul Cruceros inaugurou suas operações no Brasil na última sexta-feira (30/10) cercada de muitas polêmicas. A viagem inaugural foi marcada por falhas operacionais e reclamações de passageiros. Diante da situação, a R11 Travel, que representa a Corazul no Brasil, passou a oferecer aos passageiros pagantes o reembolso de 100% dos valores e uma carta…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 13:22:47 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645667",
+   "titulo": "Viagem 2 em 1 na melhor do mundo! Dubai + Doha voando Qatar Airways a partir de R$ 5.191 ida e volta com bagagem inclusa",
+   "link": "https://www.melhoresdestinos.com.br/promocao/viagem-2-em-1-dubai-doha-qatar-airways-5191",
+   "texto": "Que tal conhecer dois dos destinos mais interessantes do Oriente Médio na mesma viagem e ainda voar com uma das companhias aéreas mais premiadas do mundo? Encontramos boas oportunidades para combinar Dubai, nos Emirados Árabes Unidos, e Doha, no Catar, com a Qatar Airways: passagens aéreas 2 em 1 a partir de R$ 5.191 ida…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 13:22:57 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645702",
+   "titulo": "Viagem ao fim do mundo: passagens para Ushuaia ou Punta Arenas a partir de R$ 1.828 ida e volta",
+   "link": "https://www.melhoresdestinos.com.br/promocao/viagem-fim-do-mundo-passagens-ushuaia-punta-arenas-1828",
+   "texto": "Que tal conhecer algumas das paisagens mais impressionantes da América do Sul e fazer uma viagem até o chamado fim do mundo? Tem boas oportunidades para viajar ao extremo sul do continente americano, com passagens aéreas para a Patagônia chilena ou argentina a partir de R$ 1.828 ida e volta, com opções para Punta Arenas,…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 14:19:05 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645609",
+   "titulo": "Argentina! Pacotes de viagem para Buenos Aires a partir de R$ 1.872 em até 12x sem juros",
+   "link": "https://www.melhoresdestinos.com.br/promocao/partiu-argentina-pacotes-de-viagem-para-buenos-aires-04nov26",
+   "texto": "Resumo da oferta: ✅ Preço: a partir de R$ 1.872 por pessoa (taxas incluídas) 💰Pagamento: em até 12 vezes sem juros ✈️ O que inclui: voos de ida e volta + hotel 🛏️ Duração: 3 a 6 dias 📅 Quando: de dezembro a março, saindo de todo o Brasil Viajar para Buenos Aires sempre é…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 14:28:27 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?p=645497",
+   "titulo": "Aeroporto que dá acesso à Costa Amalfitana, na Itália, fecha temporariamente para obras – veja o que muda!",
+   "link": "https://www.melhoresdestinos.com.br/obras-aeroporto-napoles-italia.html",
+   "texto": "O Aeroporto de Nápoles, principal acesso à Costa Amalfitana, na Itália, está fechado até o fim deste mês para uma reforma na pista. Segundo a administração do terminal, o objetivo é garantir a “continuidade operacional da infraestrutura no longo prazo.” Os serviços em andamento incluem a remoção das camadas existentes do pavimento da pista e…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 14:59:14 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?p=645553",
+   "titulo": "Resort em Caldas Novas terá sistema all inclusive a partir de dezembro, com diárias por R$ 337 por pessoa",
+   "link": "https://www.melhoresdestinos.com.br/resort-all-inclusive-caldas-novas-marina-flat.html",
+   "texto": "Encontrar um resort all inclusive em Caldas Novas não é uma tarefa fácil. Embora a cidade em Goiás seja famosa por seus hotéis e resorts com piscinas de águas termais, a maioria oferece pacotes com meia pensão ou pensão completa. Mas uma novidade promete aumentar as opções para quem gosta de viajar com tudo incluído…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 16:33:19 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=645800",
+   "titulo": "Promo relâmpago! Cupom de até R$ 200 OFF em passagens aéreas da Azul na Decolar",
+   "link": "https://www.melhoresdestinos.com.br/promocao/cupom-azul-passagens-aereas-decolar",
+   "texto": "Vai viajar com a Azul nos próximos meses? Então aproveite que tem desconto. A Decolar, parceira oficial da Azul e maior agência da América Latina, liberou um cupom exclusivo para voos da companhia com até 12% de desconto, com teto de R$ 200 por compra. Mas atenção: são apenas 397 cupons e a validade vai…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 17:11:35 +0000"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?p=645695",
+   "titulo": "Com preços fixos de passagens, Azul inicia novos voos de Florianópolis para o interior de Santa Catarina",
+   "link": "https://www.melhoresdestinos.com.br/voos-azul-conecta-santa-catarina.html",
+   "texto": "A Azul Conecta, o braço de aviação regional da companhia aérea Azul, iniciou ontem voos diretos entre Florianópolis e Joaçaba, no interior de Santa Catarina. A nova rota é a primeira de uma série de estreias dentro do VOA + SC, programa do governo catarinense para aumentar as operações aéreas no estado. O que é…",
+   "fonte": "Melhores Destinos",
+   "data": "Wed, 04 Nov 2026 18:14:51 +0000"
+  }
+ ],
+ "rotas": [],
+ "rotas_milhas": [],
+ "uso_serpapi": {
+  "mes": "",
+  "usadas": 0,
+  "avisado": false
+ },
+ "uso_seats": {
+  "dia": "",
+  "usadas": 0
+ },
+ "erros_feed": {
+  "Passagens Imperdíveis": 1
+ }
+}
