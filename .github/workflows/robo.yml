@@ -2,7 +2,7 @@ name: Robo de Passagens
 
 on:
   schedule:
-    - cron: "7,37 * * * *"   # a cada 30 minutos (horario UTC)
+    - cron: "2,17,32,47 * * * *"   # a cada 15 minutos (horario UTC)
   workflow_dispatch: {}       # permite rodar na hora pelo botao "Run workflow"
 
 permissions:
