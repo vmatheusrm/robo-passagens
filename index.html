@@ -163,7 +163,68 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
 @keyframes sk{to{background-position:-200% 0}}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:8px 14px;border-radius:10px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
 
+/* editor */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,100%);background:var(--bg);z-index:21;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.drawer.open{transform:none}
+.dr-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--surface)}
+.dr-head h3{margin:0;font-size:17px}
+.dr-body{flex:1;overflow:auto;padding:4px 20px 24px}
+.dr-foot{display:flex;gap:8px;justify-content:flex-end;align-items:center;padding:12px 20px;border-top:1px solid var(--line);background:var(--surface)}
+.dr-foot .note{margin-right:auto;font-size:12px;color:var(--muted)}
+.fs{margin-top:20px}
+.fs>h4{margin:0 0 10px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.field{margin-bottom:14px}
+.field>label,.field>.lab{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+[hidden]{display:none!important}
+.help{font-size:12px;color:var(--muted);margin-top:4px}
+.inp{width:100%;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;padding:0 12px}
+.inp:focus,.chipbox:focus-within{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+.chipbox{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:42px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface)}
+.chipbox input{flex:1;min-width:120px;border:0;background:none;color:var(--text);font:inherit;font-size:14px;outline:none;height:28px}
+.xchip{display:inline-flex;align-items:center;gap:4px;font-size:13px;padding:3px 4px 3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-weight:550}
+.xchip button{border:0;background:none;color:inherit;cursor:pointer;width:20px;height:20px;border-radius:50%;font-size:15px;line-height:1}
+.xchip button:hover{background:rgba(127,127,127,.2)}
+.sugs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sugs button{border:1px dashed var(--line);background:none;color:var(--text-2);font:inherit;font-size:12px;padding:3px 10px;border-radius:999px;cursor:pointer}
+.sugs button:hover{border-color:var(--accent);color:var(--accent-ink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sw-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.sw-row:first-of-type{border-top:none}
+.sw-row .t{font-size:14px;font-weight:550}.sw-row .d{font-size:12px;color:var(--muted)}
+.switch{position:relative;width:44px;height:26px;flex:none}
+.switch input{opacity:0;width:0;height:0;position:absolute}
+.switch span{position:absolute;inset:0;border-radius:999px;background:var(--line);transition:.15s;cursor:pointer}
+.switch span::after{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;border-radius:50%;background:#fff;transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.switch input:checked+span{background:var(--accent)}
+.switch input:checked+span::after{transform:translateX(18px)}
+.switch input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.rlist{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.ritem{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:13px}
+.ritem.del{opacity:.55;text-decoration:line-through}
+.ritem.new{border-color:var(--accent)}
+.ritem b{font-size:14px}
+.ritem .x{border:0;background:none;color:var(--text-2);cursor:pointer;font:inherit;font-size:12px;padding:4px 8px;border-radius:8px}
+.ritem .x:hover{background:var(--surface-2)}
+.addbox{padding:12px;border-radius:12px;border:1px dashed var(--line)}
+.addbox .row3,.addbox .row{margin-bottom:8px}
+.mini{font-size:11px;color:var(--muted);display:block;margin-bottom:3px}
+.syncbar{display:none;align-items:center;gap:10px;padding:10px 14px;margin-bottom:12px;font-size:13px}
+.syncbar.show{display:flex}
+.spin{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--accent);animation:rot 0.8s linear infinite;flex:none}
+@keyframes rot{to{transform:rotate(360deg)}}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.98);width:min(520px,calc(100% - 32px));max-height:calc(100% - 32px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;z-index:22;padding:20px;opacity:0;pointer-events:none;transition:.15s}
+.modal.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.modal h3{margin:0 0 6px;font-size:17px}
+.modal ol{padding-left:20px;font-size:14px;color:var(--text-2);margin:12px 0}
+.modal ol li{margin-bottom:6px}
+.err{color:var(--bad-ink);font-size:13px;margin-top:6px;min-height:18px}
+.ok-ink{color:var(--good-ink)}
+
 @media (max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+@media (max-width:480px){.row3{grid-template-columns:1fr 1fr}.dr-body{padding:4px 16px 24px}.dr-foot .note{display:none}.dr-foot .btn{flex:1;justify-content:center}}
 @media (max-width:420px){.grid{grid-template-columns:1fr}.kpi .val{font-size:22px}.promo{grid-template-columns:1fr auto}.ptype{display:none}h1{font-size:19px}}
 </style>
 </head>
@@ -179,6 +240,7 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
     </div>
     <div class="actions">
       <span class="pill" id="status"><span class="dot"></span><span>—</span></span>
+      <button class="btn" id="edit"><svg viewBox="0 0 24 24"><path d="M3 17.2V21h3.8l11-11-3.8-3.8zM20.7 7a1 1 0 0 0 0-1.4l-2.3-2.3a1 1 0 0 0-1.4 0l-1.8 1.8 3.8 3.8z"/></svg>Editar filtros</button>
       <a class="btn primary" id="botlink" href="#" target="_blank" rel="noopener" hidden>
         <svg viewBox="0 0 24 24"><path d="M9.8 15.6 9.6 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7L21 5.4c.3-1.2-.4-1.7-1.2-1.4L3.3 10.3c-1.1.4-1.1 1.1-.2 1.4l4.2 1.3 9.8-6.2c.5-.3.9-.1.5.2z"/></svg>
         Abrir o bot</a>
@@ -187,12 +249,39 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
     </div>
   </header>
 
+  <div class="card syncbar" id="sync" role="status" aria-live="polite"></div>
   <div id="app">
     <div class="kpis"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
   </div>
 
   <footer><div id="sources"></div><div>Dados lidos de <code>data/estado.json</code> · atualizado pelo GitHub Actions</div></footer>
 </div>
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer" id="drawer" aria-label="Editar filtros e rotas" aria-hidden="true">
+  <div class="dr-head"><h3>Editar filtros e rotas</h3><button class="btn icon-btn" id="dr-close" aria-label="Fechar">✕</button></div>
+  <div class="dr-body" id="dr-body"></div>
+  <div class="dr-foot"><span class="note" id="dr-note">As mudanças valem para o Telegram também.</span><button class="btn" id="dr-cancel">Cancelar</button><button class="btn primary" id="dr-save">Salvar e aplicar</button></div>
+</aside>
+
+<div class="modal" id="connect" role="dialog" aria-modal="true" aria-labelledby="cn-t">
+  <h3 id="cn-t">Conectar o painel ao seu GitHub</h3>
+  <div style="font-size:14px;color:var(--text-2)">Para o painel poder salvar filtros, ele precisa de uma chave de acesso ao repositório. A chave fica guardada só neste navegador. Faça isto uma vez em cada aparelho:</div>
+  <ol>
+    <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
+    <li><b>Token name</b>: <code>painel-robo</code>. <b>Expiration</b>: a maior opção disponível.</li>
+    <li><b>Repository access</b>: <b>Only select repositories</b> → <code id="cn-repo">robo-passagens</code>.</li>
+    <li><b>Permissions</b> → <b>Repository permissions</b>: <b>Contents</b> = Read and write e <b>Actions</b> = Read and write.</li>
+    <li>Clique em <b>Generate token</b>, copie e cole abaixo.</li>
+  </ol>
+  <div class="field"><label for="cn-token">Chave (começa com github_pat_)</label><input class="inp" id="cn-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_..."></div>
+  <div class="err" id="cn-err"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;align-items:center;margin-top:8px">
+    <button class="btn" id="cn-out" hidden style="margin-right:auto">Desconectar</button>
+    <button class="btn" id="cn-cancel">Cancelar</button><button class="btn primary" id="cn-save">Testar e salvar</button>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -250,11 +339,33 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
 
   function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.opacity = 1; clearTimeout(toast.t); toast.t = setTimeout(() => t.style.opacity = 0, 1600); }
 
+  /* ---------- GitHub (para editar) ---------- */
+  const REPO = (() => {
+    const owner = location.hostname.endsWith(".github.io") ? location.hostname.split(".")[0] : "vmatheusrm";
+    const seg = location.pathname.split("/").filter(Boolean)[0];
+    return { owner, repo: seg && !seg.includes(".") ? seg : "robo-passagens" };
+  })();
+  const API = `https://api.github.com/repos/${REPO.owner}/${REPO.repo}`;
+  let TOKEN = null;
+  try { TOKEN = localStorage.getItem("gh_token"); } catch (e) {}
+  const gh = (path, opt = {}) => fetch(API + path, { ...opt, headers: { Authorization: "Bearer " + TOKEN, "X-GitHub-Api-Version": "2022-11-28", Accept: "application/vnd.github+json", ...(opt.headers || {}) } });
+  const b64 = str => { const bytes = new TextEncoder().encode(str); let bin = ""; bytes.forEach(b => bin += String.fromCharCode(b)); return btoa(bin); };
+
+  async function fetchEstado() {
+    if (TOKEN) {
+      try {
+        const r = await gh("/contents/data/estado.json?ref=main&t=" + Date.now(), { headers: { Accept: "application/vnd.github.raw+json" }, cache: "no-store" });
+        if (r.ok) return await r.json();
+      } catch (e) {}
+    }
+    const r = await fetch("data/estado.json?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }
+
   async function load() {
     try {
-      const r = await fetch("data/estado.json?t=" + Date.now(), { cache: "no-store" });
-      if (!r.ok) throw new Error(r.status);
-      DATA = await r.json();
+      DATA = await fetchEstado();
       render();
     } catch (e) {
       app.innerHTML = `<div class="card banner"><b>Não consegui carregar os dados.</b><br><span style="color:var(--text-2);font-size:14px">Confira se o robô já rodou pelo menos uma vez depois de atualizar o <code>robo.py</code>. Erro: ${esc(e.message)}</span></div>`;
@@ -339,7 +450,12 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
   }
 
   /* ---------- rotas ---------- */
-  const nome = cod => (DATA.painel && DATA.painel.nomes && DATA.painel.nomes[cod]) || cod;
+  const nome = cod => {
+    const p = (DATA && DATA.painel) || {};
+    if (p.nomes && p.nomes[cod]) return p.nomes[cod];
+    const hit = (p.catalogo || []).find(x => x.c === cod);
+    return hit ? hit.n : cod;
+  };
   function lvlTag(n, faixa) {
     if (!n) return "";
     const m = { low: ["low", "Preço baixo", ICON.down], typical: ["typical", "Preço normal", ICON.mid], high: ["high", "Preço alto", ICON.up] }[n];
@@ -534,8 +650,10 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
       <dt>Bônus de pontos</dt><dd>${yn(c.bonus)}</dd>
       <dt>Checar rotas</dt><dd><span class="tag">a cada ${c.intervalo_horas || 12} h</span></dd>
     </dl>
-    <div class="how">Para mudar, mande um comando ao bot no Telegram (toque para copiar):
+    <div style="margin-top:14px"><button class="btn primary" id="cfg-edit" style="width:100%;justify-content:center">Editar filtros e rotas aqui</button></div>
+    <div class="how">Ou mande um comando ao bot no Telegram (toque para copiar):
       <div class="cmds">${["/destinos Europa, Orlando", "/tipo internacional", "/precomax 2000", "/milhasmax 40000", "/rota FOR LIS 10/03/2027 25/03/2027 3500", "/ajuda"].map(t => `<code data-copy="${esc(t)}">${esc(t)}</code>`).join("")}</div></div>`;
+    $("#cfg-edit").onclick = openEditor;
     $("#cfg").querySelectorAll("[data-copy]").forEach(el => el.onclick = async () => {
       try { await navigator.clipboard.writeText(el.dataset.copy); toast("Copiado: " + el.dataset.copy); } catch (e) { toast("Não deu para copiar"); }
     });
@@ -545,6 +663,266 @@ footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:
     const f = (DATA.painel && DATA.painel.fontes) || {};
     $("#sources").innerHTML = Object.entries(f).map(([k, v]) => `<span class="src"><span class="dot ${v}"></span>${esc(k)}${v === "erro" ? " (fora do ar)" : ""}</span>`).join("");
   }
+
+  /* ---------- editor de filtros ---------- */
+  let ED = null, SYNC = null;
+  const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim();
+  const catalogo = () => ((DATA && DATA.painel) || {}).catalogo || [];
+  const regioes = () => ((DATA && DATA.painel) || {}).regioes || ["Europa", "América do Norte", "Caribe", "América do Sul", "Ásia", "África", "Oriente Médio", "Oceania", "Nordeste"];
+  function resolveLugar(txt) {
+    const t = String(txt || "").trim();
+    if (!t) return null;
+    const n = norm(t);
+    const hit = catalogo().find(x => x.c.toLowerCase() === n || norm(x.n) === n);
+    if (hit) return hit.c;
+    const reg = regioes().find(r => norm(r) === n);
+    return reg || t.slice(0, 40);
+  }
+  const lugarLabel = v => { const n = nome(v); return n !== v ? `${n} (${v})` : v; };
+  const keyRota = (tipo, r) => `${tipo}|${r.origem}|${r.destino}|${tipo === "milhas" ? r.inicio : r.ida}`;
+  const hojeISO = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); };
+
+  function openEditor() {
+    if (!DATA) return;
+    if (!TOKEN) { openConnect(true); return; }
+    const c = DATA.config || {};
+    ED = {
+      origens: [...(c.origens || [])], destinos: [...(c.destinos || [])], tipo: c.tipo || "ambos",
+      preco_max: c.preco_max || "", milhas_max: c.milhas_max || "", milhas: c.milhas !== false, bonus: !!c.bonus,
+      intervalo_horas: c.intervalo_horas || 12, pausado: !!c.pausado, checar: false,
+      remover: new Set(), add_rotas: [], add_rotas_milhas: [],
+    };
+    drawEditor();
+    $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeEditor() {
+    $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true");
+    if (!$("#connect").classList.contains("open")) $("#scrim").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  $("#edit").onclick = openEditor;
+  $("#dr-close").onclick = closeEditor; $("#dr-cancel").onclick = closeEditor;
+
+  function chipField(id, label, help, arr, sugs) {
+    return `<div class="field"><div class="lab">${label}</div>
+      <div class="chipbox" data-box="${id}">${arr.map((v, i) => `<span class="xchip">${esc(lugarLabel(v))}<button type="button" data-rm="${id}" data-i="${i}" aria-label="Remover ${esc(lugarLabel(v))}">×</button></span>`).join("")}
+        <input list="dl-${id}" data-add="${id}" placeholder="${arr.length ? "adicionar…" : id === "origens" ? "qualquer origem — digite uma cidade" : "qualquer destino — digite cidade, código ou região"}" aria-label="${label}"></div>
+      <div class="help">${help}</div>
+      <div class="sugs">${sugs.filter(s => !arr.includes(s)).slice(0, 10).map(s => `<button type="button" data-sug="${id}" data-v="${esc(s)}">+ ${esc(nome(s))}</button>`).join("")}</div>
+    </div>`;
+  }
+  function swRow(id, t, d, on) {
+    return `<div class="sw-row"><div><div class="t">${t}</div><div class="d">${d}</div></div>
+      <label class="switch"><input type="checkbox" data-sw="${id}" ${on ? "checked" : ""} aria-label="${t}"><span></span></label></div>`;
+  }
+  function rotaItem(tipo, r, novo, idx) {
+    const k = keyRota(tipo, r), del = !novo && ED.remover.has(k);
+    const datas = tipo === "milhas" ? `${dBR(r.inicio)} a ${dBR(r.fim)}` : dBR(r.ida) + (r.volta ? " → " + dBR(r.volta) : " · só ida");
+    const extra = tipo === "milhas" ? `até ${milhas(r.milhas_max)} milhas` : r.teto ? `alvo ${reais(r.teto)}` : "sem alvo";
+    return `<div class="ritem ${del ? "del" : ""} ${novo ? "new" : ""}"><div><b>${esc(r.origem)} → ${esc(r.destino)}</b> <span style="color:var(--muted)">· ${esc(datas)} · ${extra}${novo ? " · nova" : ""}</span></div>
+      <button type="button" class="x" ${novo ? `data-undo-add="${tipo}" data-i="${idx}"` : `data-toggle-del="${esc(k)}"`}>${novo ? "Desfazer" : del ? "Manter" : "Remover"}</button></div>`;
+  }
+
+  function drawEditor() {
+    const cat = catalogo();
+    const br = cat.filter(x => x.r === "BR");
+    const dlO = br.map(x => `<option value="${esc(x.n)}">${esc(x.c)}</option>`).join("");
+    const dlD = regioes().map(r => `<option value="${esc(r)}">região</option>`).join("") + cat.map(x => `<option value="${esc(x.n)}">${esc(x.c)}</option>`).join("");
+    const dlI = cat.map(x => `<option value="${esc(x.c)}">${esc(x.n)}</option>`).join("");
+    const rs = DATA.rotas || [], rm = DATA.rotas_milhas || [];
+    const p = DATA.painel || {};
+    $("#dr-body").innerHTML = `
+      <datalist id="dl-origens">${dlO}</datalist><datalist id="dl-destinos">${dlD}</datalist><datalist id="dl-iata">${dlI}</datalist>
+      <div class="fs"><h4>Promoções</h4>
+        ${chipField("origens", "De onde você sai", "Vazio = promoções saindo de qualquer cidade. Promoções “saindo de várias cidades” sempre entram.", ED.origens, ["FOR", "REC", "NAT", "JPA", "SSA", "SLZ", "THE", "BSB", "SAO", "RIO"])}
+        ${chipField("destinos", "Destinos que te interessam", "Cidade, código de aeroporto ou região. Vazio = qualquer destino.", ED.destinos, ["Europa", "América do Norte", "América do Sul", "Caribe", "Nordeste", "LIS", "MCO", "BUE", "SCL", "PAR"])}
+        <div class="field"><div class="lab">Tipo de viagem</div>
+          <div class="seg" role="group" aria-label="Tipo de viagem">${["ambos", "nacional", "internacional"].map(t => `<button type="button" data-tipo-ed="${t}" aria-pressed="${ED.tipo === t}">${{ ambos: "Nacional e internacional", nacional: "Só nacional", internacional: "Só internacional" }[t]}</button>`).join("")}</div></div>
+        <div class="row">
+          <div class="field"><label for="ed-preco">Preço máximo (R$)</label><input class="inp num" id="ed-preco" type="number" min="50" step="50" inputmode="numeric" placeholder="sem limite" value="${esc(ED.preco_max)}"><div class="help">Promoções sem preço no título continuam vindo.</div></div>
+          <div class="field"><label for="ed-milhas">Milhas máximas por trecho</label><input class="inp num" id="ed-milhas" type="number" min="1000" step="1000" inputmode="numeric" placeholder="sem limite" value="${esc(ED.milhas_max)}"></div>
+        </div>
+        ${swRow("milhas", "Promoções de passagens em milhas", "Smiles, LATAM Pass, Azul Fidelidade…", ED.milhas)}
+        ${swRow("bonus", "Bônus de transferência de pontos", "Livelo, Esfera e afins (mais mensagens)", ED.bonus)}
+      </div>
+
+      <div class="fs"><h4>Rotas em reais (Google Flights)</h4>
+        ${!p.serpapi_ligada ? `<div class="help" style="margin-bottom:8px">A chave da SerpApi ainda não está configurada: as rotas ficam salvas, mas só são checadas depois que você configurar.</div>` : ""}
+        <div class="rlist">${rs.map(r => rotaItem("rs", r, false)).join("")}${ED.add_rotas.map((r, i) => rotaItem("rs", r, true, i)).join("")}${!rs.length && !ED.add_rotas.length ? `<div class="help">Nenhuma rota ainda.</div>` : ""}</div>
+        <div class="addbox">
+          <div class="row3"><label><span class="mini">Origem</span><input class="inp" id="nr-o" list="dl-iata" maxlength="3" value="FOR" style="text-transform:uppercase"></label>
+            <label><span class="mini">Destino</span><input class="inp" id="nr-d" list="dl-iata" maxlength="3" placeholder="LIS" style="text-transform:uppercase"></label>
+            <label><span class="mini">Preço-alvo (R$)</span><input class="inp" id="nr-t" type="number" min="50" step="50" placeholder="opcional"></label></div>
+          <div class="row"><label><span class="mini">Ida</span><input class="inp" id="nr-i" type="date" min="${hojeISO()}"></label>
+            <label><span class="mini">Volta (opcional)</span><input class="inp" id="nr-v" type="date" min="${hojeISO()}"></label></div>
+          <div style="display:flex;align-items:center;gap:10px"><button type="button" class="btn" id="nr-add">+ Adicionar rota</button><span class="err" id="nr-err" style="margin:0"></span></div>
+        </div>
+      </div>
+
+      <div class="fs"><h4>Rotas em milhas (Smiles e Azul)</h4>
+        ${!p.seats_ligada ? `<div class="help" style="margin-bottom:8px">Precisa da chave do Seats.aero (assinatura Pro). Sem ela, a rota fica salva mas não é checada.</div>` : ""}
+        <div class="rlist">${rm.map(r => rotaItem("milhas", r, false)).join("")}${ED.add_rotas_milhas.map((r, i) => rotaItem("milhas", r, true, i)).join("")}${!rm.length && !ED.add_rotas_milhas.length ? `<div class="help">Nenhuma rota em milhas.</div>` : ""}</div>
+        <div class="addbox">
+          <div class="row3"><label><span class="mini">Origem</span><input class="inp" id="nm-o" list="dl-iata" maxlength="3" value="FOR" style="text-transform:uppercase"></label>
+            <label><span class="mini">Destino</span><input class="inp" id="nm-d" list="dl-iata" maxlength="3" placeholder="LIS" style="text-transform:uppercase"></label>
+            <label><span class="mini">Milhas máx.</span><input class="inp" id="nm-m" type="number" min="1000" step="1000" placeholder="60000"></label></div>
+          <div class="row"><label><span class="mini">De</span><input class="inp" id="nm-i" type="date" min="${hojeISO()}"></label>
+            <label><span class="mini">Até</span><input class="inp" id="nm-f" type="date" min="${hojeISO()}"></label></div>
+          <div style="display:flex;align-items:center;gap:10px"><button type="button" class="btn" id="nm-add">+ Adicionar rota em milhas</button><span class="err" id="nm-err" style="margin:0"></span></div>
+        </div>
+      </div>
+
+      <div class="fs"><h4>Geral</h4>
+        <div class="field"><label for="ed-int">Checar cada rota a cada</label>
+          <select class="inp" id="ed-int">${[6, 8, 12, 24, 48, 72].map(h => `<option value="${h}" ${+ED.intervalo_horas === h ? "selected" : ""}>${h} horas</option>`).join("")}</select>
+          <div class="help">Plano grátis da SerpApi: 240 buscas/mês. A cada 12 h cabem ~4 rotas; a cada 24 h, ~8.</div></div>
+        ${swRow("checar", "Checar as rotas agora", "Faz uma checagem extra assim que salvar", ED.checar)}
+        ${swRow("pausado", "Pausar todos os alertas", "O robô continua lendo, mas não te avisa", ED.pausado)}
+      </div>`;
+    wireEditor();
+  }
+
+  function addChip(id, val) {
+    const v = resolveLugar(val);
+    if (v && !ED[id].includes(v)) ED[id].push(v);
+    drawEditor();
+    const inp = $(`[data-add="${id}"]`); if (inp) inp.focus();
+  }
+  function keepNums() {
+    ED.preco_max = $("#ed-preco").value; ED.milhas_max = $("#ed-milhas").value; ED.intervalo_horas = +$("#ed-int").value;
+  }
+  function wireEditor() {
+    const body = $("#dr-body");
+    body.querySelectorAll("[data-add]").forEach(inp => {
+      const id = inp.dataset.add;
+      inp.addEventListener("keydown", e => {
+        if ((e.key === "Enter" || e.key === ",") && inp.value.trim()) { e.preventDefault(); keepNums(); addChip(id, inp.value.replace(/,$/, "")); }
+        if (e.key === "Backspace" && !inp.value && ED[id].length) { keepNums(); ED[id].pop(); drawEditor(); $(`[data-add="${id}"]`).focus(); }
+      });
+      inp.addEventListener("change", () => { if (inp.value.trim()) { keepNums(); addChip(id, inp.value); } });
+    });
+    body.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { keepNums(); ED[b.dataset.rm].splice(+b.dataset.i, 1); drawEditor(); });
+    body.querySelectorAll("[data-sug]").forEach(b => b.onclick = () => { keepNums(); addChip(b.dataset.sug, b.dataset.v); });
+    body.querySelectorAll("[data-tipo-ed]").forEach(b => b.onclick = () => { keepNums(); ED.tipo = b.dataset.tipoEd; drawEditor(); });
+    body.querySelectorAll("[data-sw]").forEach(s => s.onchange = () => { ED[s.dataset.sw] = s.checked; });
+    body.querySelectorAll("[data-toggle-del]").forEach(b => b.onclick = () => { keepNums(); const k = b.dataset.toggleDel; ED.remover.has(k) ? ED.remover.delete(k) : ED.remover.add(k); drawEditor(); });
+    body.querySelectorAll("[data-undo-add]").forEach(b => b.onclick = () => { keepNums(); (b.dataset.undoAdd === "milhas" ? ED.add_rotas_milhas : ED.add_rotas).splice(+b.dataset.i, 1); drawEditor(); });
+    const iata = v => String(v || "").trim().toUpperCase();
+    $("#nr-add").onclick = () => {
+      const r = { origem: iata($("#nr-o").value), destino: iata($("#nr-d").value), ida: $("#nr-i").value, volta: $("#nr-v").value || null, teto: +$("#nr-t").value || null };
+      const err = !/^[A-Z]{3}$/.test(r.origem) || !/^[A-Z]{3}$/.test(r.destino) ? "Use códigos de 3 letras (ex.: FOR, LIS)."
+        : !r.ida ? "Escolha a data de ida." : r.ida < hojeISO() ? "A ida precisa ser hoje ou depois." : r.volta && r.volta < r.ida ? "A volta precisa ser depois da ida." : "";
+      if (err) { $("#nr-err").textContent = err; return; }
+      keepNums(); ED.add_rotas.push(r); drawEditor();
+    };
+    $("#nm-add").onclick = () => {
+      const r = { origem: iata($("#nm-o").value), destino: iata($("#nm-d").value), inicio: $("#nm-i").value, fim: $("#nm-f").value, milhas_max: +$("#nm-m").value || null };
+      const err = !/^[A-Z]{3}$/.test(r.origem) || !/^[A-Z]{3}$/.test(r.destino) ? "Use códigos de 3 letras (ex.: FOR, LIS)."
+        : !r.inicio || !r.fim ? "Escolha o período (de / até)." : r.fim < r.inicio ? "A data final precisa ser depois da inicial." : "";
+      if (err) { $("#nm-err").textContent = err; return; }
+      keepNums(); ED.add_rotas_milhas.push(r); drawEditor();
+    };
+  }
+
+  async function saveEditor() {
+    keepNums();
+    // o que estiver digitado e não virou etiqueta também entra
+    document.querySelectorAll("#dr-body [data-add]").forEach(inp => { const v = resolveLugar(inp.value); if (v && !ED[inp.dataset.add].includes(v)) ED[inp.dataset.add].push(v); });
+    const num = v => (v === "" || v == null || +v <= 0) ? null : +v;
+    const remover = [...ED.remover].map(k => { const [tipo, origem, destino, data] = k.split("|"); return { tipo, origem, destino, data }; });
+    const pedido = {
+      id: Date.now().toString(36), criado: new Date().toISOString(),
+      config: { origens: ED.origens, destinos: ED.destinos, tipo: ED.tipo, milhas: ED.milhas, bonus: ED.bonus,
+        preco_max: num(ED.preco_max), milhas_max: num(ED.milhas_max), intervalo_horas: +ED.intervalo_horas, pausado: ED.pausado },
+      add_rotas: ED.add_rotas, add_rotas_milhas: ED.add_rotas_milhas, remover_rotas: remover, checar: ED.checar,
+    };
+    const btn = $("#dr-save"); btn.disabled = true; btn.textContent = "Salvando…";
+    try {
+      let sha;
+      for (let tent = 0; tent < 2; tent++) {
+        const g = await gh("/contents/data/comandos_web.json?ref=main&t=" + Date.now(), { cache: "no-store" });
+        if (g.ok) sha = (await g.json()).sha; else if (g.status !== 404) throw await ghErro(g);
+        const put = await gh("/contents/data/comandos_web.json", { method: "PUT", body: JSON.stringify({ message: "Painel: atualiza filtros", content: b64(JSON.stringify(pedido, null, 1)), sha, branch: "main" }) });
+        if (put.ok) break;
+        if (put.status === 409 && tent === 0) continue;
+        throw await ghErro(put);
+      }
+      const d = await gh("/actions/workflows/robo.yml/dispatches", { method: "POST", body: JSON.stringify({ ref: "main" }) });
+      Object.assign(DATA.config, pedido.config);
+      render();
+      closeEditor();
+      startSync(pedido.id, d.status === 204);
+    } catch (e) {
+      $("#dr-note").innerHTML = `<span class="err">${esc(e.message)}</span>`;
+      if (e.reconnect) openConnect(true, e.message);
+    } finally { btn.disabled = false; btn.textContent = "Salvar e aplicar"; }
+  }
+  $("#dr-save").onclick = saveEditor;
+  async function ghErro(r) {
+    let msg = "";
+    try { msg = (await r.json()).message || ""; } catch (e) {}
+    const e = new Error(r.status === 401 ? "A chave do GitHub não é mais válida. Conecte de novo."
+      : r.status === 403 || r.status === 404 ? "A chave não tem permissão de escrita neste repositório (Contents e Actions = Read and write)."
+      : `GitHub respondeu ${r.status}${msg ? ": " + msg : ""}`);
+    e.reconnect = r.status === 401 || r.status === 403 || r.status === 404;
+    return e;
+  }
+
+  function syncMsg(html, spin) { const s = $("#sync"); s.innerHTML = (spin ? '<span class="spin"></span>' : "") + `<span>${html}</span>`; s.classList.add("show"); }
+  function startSync(pid, dispatched) {
+    clearInterval(SYNC);
+    syncMsg(dispatched ? "Salvo. O robô está aplicando agora — leva cerca de 1 a 2 minutos…" : "Salvo. Vai ser aplicado na próxima rodada automática (até 15 minutos)…", true);
+    const t0 = Date.now();
+    SYNC = setInterval(async () => {
+      try {
+        const novo = await fetchEstado();
+        const w = novo.painel && novo.painel.web;
+        if (w && w.id === pid) {
+          clearInterval(SYNC); DATA = novo; render();
+          const q = parse(w.quando);
+          if (w.status === "ok") syncMsg(`<span class="ok-ink">✓ Aplicado ${q ? "às " + q.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }) : ""}.</span> A confirmação chegou no seu Telegram. ${(w.resumo || []).length ? "· " + esc(w.resumo.join(" · ")) : ""}`);
+          else syncMsg(`<span class="err" style="margin:0">Não foi possível aplicar: ${esc((w.resumo || []).join(" · "))}</span>`);
+          setTimeout(() => $("#sync").classList.remove("show"), 15000);
+        } else if (Date.now() - t0 > 20 * 60 * 1000) {
+          clearInterval(SYNC); syncMsg("Ainda não apliquei. Confira a aba Actions do GitHub ou tente salvar de novo.");
+        }
+      } catch (e) {}
+    }, 15000);
+  }
+
+  /* ---------- conectar ---------- */
+  let afterConnect = false;
+  function openConnect(thenEdit, err) {
+    afterConnect = !!thenEdit;
+    $("#cn-repo").textContent = REPO.repo;
+    $("#cn-token").value = "";
+    $("#cn-err").textContent = err || "";
+    $("#cn-out").hidden = !TOKEN;
+    $("#connect").classList.add("open"); $("#scrim").classList.add("open");
+    setTimeout(() => $("#cn-token").focus(), 50);
+  }
+  function closeConnect() { $("#connect").classList.remove("open"); if (!$("#drawer").classList.contains("open")) $("#scrim").classList.remove("open"); }
+  $("#cn-cancel").onclick = closeConnect;
+  $("#cn-out").onclick = () => { TOKEN = null; try { localStorage.removeItem("gh_token"); } catch (e) {} closeConnect(); toast("Painel desconectado deste navegador"); };
+  $("#cn-save").onclick = async () => {
+    const tk = $("#cn-token").value.trim();
+    if (!tk) { $("#cn-err").textContent = "Cole a chave."; return; }
+    $("#cn-save").disabled = true; $("#cn-err").textContent = "Testando…";
+    try {
+      const r = await fetch(API, { headers: { Authorization: "Bearer " + tk, Accept: "application/vnd.github+json" } });
+      if (r.status === 401) throw new Error("Chave inválida. Confira se copiou inteira.");
+      if (!r.ok) throw new Error("A chave não enxerga o repositório " + REPO.repo + ". Confira o passo 3.");
+      const j = await r.json();
+      if (j.permissions && j.permissions.push === false) throw new Error("A chave só pode ler. Dê Contents = Read and write (passo 4).");
+      TOKEN = tk; try { localStorage.setItem("gh_token", tk); } catch (e) {}
+      closeConnect(); toast("Painel conectado ✓");
+      if (afterConnect) { DATA = await fetchEstado().catch(() => DATA); openEditor(); }
+    } catch (e) { $("#cn-err").textContent = e.message; }
+    finally { $("#cn-save").disabled = false; }
+  };
+  $("#scrim").onclick = () => { if ($("#connect").classList.contains("open")) closeConnect(); else closeEditor(); };
+  addEventListener("keydown", e => { if (e.key === "Escape") { if ($("#connect").classList.contains("open")) closeConnect(); else if ($("#drawer").classList.contains("open")) closeEditor(); } });
 
   load();
   setInterval(() => { if (!document.hidden) load(); }, 5 * 60 * 1000);

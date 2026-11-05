@@ -93,7 +93,7 @@ TEXTO_AJUDA = """<b>✈️ Robô de Passagens — comandos</b>
    origem, destino, janela de datas e milhas máximas
 
 <b>Geral</b>
-/painel — link da página com gráficos e promoções
+/painel — link da página (lá você também edita filtros e rotas)
 /status — mostra suas configurações
 /pausar e /retomar — desliga/liga os alertas
 /ajuda — esta mensagem
@@ -1045,6 +1045,144 @@ def checar_rotas_milhas(estado: dict, tg: Telegram) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# Pedidos feitos pelo painel web (data/comandos_web.json, gravado pela página)
+# --------------------------------------------------------------------------- #
+
+ARQUIVO_WEB = PASTA / "data" / "comandos_web.json"
+NOMES_CAMPOS = {
+    "origens": "Origens", "destinos": "Destinos", "tipo": "Tipo", "milhas": "Promoções de milhas",
+    "bonus": "Bônus de pontos", "preco_max": "Preço máximo", "milhas_max": "Milhas máximas",
+    "intervalo_horas": "Intervalo das rotas (h)", "pausado": "Pausado",
+}
+
+
+def _lista_lugares(valor) -> list[str]:
+    if not isinstance(valor, list):
+        raise ValueError("lista inválida")
+    saida = []
+    for v in valor[:40]:
+        v = str(v).strip()[:40]
+        if v:
+            lugar = interpretar_lugar(v)
+            if lugar not in saida:
+                saida.append(lugar)
+    return saida
+
+
+def _numero_ou_nada(valor, minimo: float, maximo: float):
+    if valor in (None, "", 0, False):
+        return None
+    v = float(valor)
+    if not (minimo <= v <= maximo):
+        raise ValueError(f"valor fora do limite: {v}")
+    return v
+
+
+def validar_config_web(novo: dict, atual: dict) -> dict:
+    c = dict(atual)
+    if "origens" in novo:
+        c["origens"] = _lista_lugares(novo["origens"])
+    if "destinos" in novo:
+        c["destinos"] = _lista_lugares(novo["destinos"])
+    if "tipo" in novo:
+        if novo["tipo"] not in ("nacional", "internacional", "ambos"):
+            raise ValueError("tipo inválido")
+        c["tipo"] = novo["tipo"]
+    for chave in ("milhas", "bonus", "pausado"):
+        if chave in novo:
+            c[chave] = bool(novo[chave])
+    if "preco_max" in novo:
+        c["preco_max"] = _numero_ou_nada(novo["preco_max"], 50, 100000)
+    if "milhas_max" in novo:
+        c["milhas_max"] = _numero_ou_nada(novo["milhas_max"], 1000, 2000000)
+    if "intervalo_horas" in novo:
+        h = int(novo["intervalo_horas"])
+        if not 2 <= h <= 168:
+            raise ValueError("intervalo inválido")
+        c["intervalo_horas"] = h
+    return c
+
+
+def descrever_valor(chave: str, v) -> str:
+    if isinstance(v, list):
+        return ", ".join(descrever_lugar(x) for x in v) or ("qualquer origem" if chave == "origens" else "qualquer destino")
+    if isinstance(v, bool):
+        return "sim" if v else "não"
+    if v is None:
+        return "sem limite"
+    if chave == "preco_max":
+        return reais(v)
+    if chave == "milhas_max":
+        return milhar(v)
+    return str(v)
+
+
+def aplicar_pedidos_web(estado: dict, tg: Telegram) -> None:
+    if not ARQUIVO_WEB.exists():
+        return
+    try:
+        pedido = json.loads(ARQUIVO_WEB.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[web] arquivo ilegível: {e}")
+        return
+    pid = str(pedido.get("id", ""))
+    if not pid or pid == estado.get("web_ultimo_id"):
+        return
+    estado["web_ultimo_id"] = pid
+    chat = estado.get("chat_id")
+    resumo = []
+    try:
+        if isinstance(pedido.get("config"), dict):
+            antes = estado["config"]
+            depois = validar_config_web(pedido["config"], antes)
+            mudancas = [f"• {NOMES_CAMPOS[k]}: <b>{esc(descrever_valor(k, depois[k]))}</b>"
+                        for k in NOMES_CAMPOS if antes.get(k) != depois.get(k)]
+            estado["config"] = depois
+            if mudancas:
+                tg.enviar(chat, "🖥️ <b>Filtros atualizados pelo painel</b>\n" + "\n".join(mudancas))
+                resumo.append(f"{len(mudancas)} filtro(s) alterado(s)")
+        for alvo in pedido.get("remover_rotas", [])[:20]:
+            lista = estado["rotas_milhas"] if alvo.get("tipo") == "milhas" else estado["rotas"]
+            chave_data = "inicio" if alvo.get("tipo") == "milhas" else "ida"
+            for r in list(lista):
+                if (r["origem"], r["destino"], r[chave_data]) == (
+                        str(alvo.get("origem", "")).upper(), str(alvo.get("destino", "")).upper(), alvo.get("data")):
+                    lista.remove(r)
+                    tg.enviar(chat, f"🗑️ Rota {r['origem']}→{r['destino']} removida pelo painel.")
+                    resumo.append(f"rota {r['origem']}→{r['destino']} removida")
+        for nova in pedido.get("add_rotas", [])[:10]:
+            partes = [nova.get("origem", ""), nova.get("destino", ""), nova.get("ida", "")]
+            if nova.get("volta"):
+                partes.append(nova["volta"])
+            if nova.get("teto"):
+                partes.append(str(int(float(nova["teto"]))))
+            antes_n = len(estado["rotas"])
+            adicionar_rota(" ".join(str(x) for x in partes), estado, tg, chat)
+            if len(estado["rotas"]) > antes_n:
+                resumo.append(f"rota {nova.get('origem')}→{nova.get('destino')} adicionada")
+        for nova in pedido.get("add_rotas_milhas", [])[:10]:
+            partes = [nova.get("origem", ""), nova.get("destino", ""), nova.get("inicio", ""),
+                      nova.get("fim", ""), str(int(float(nova.get("milhas_max") or 0))) if nova.get("milhas_max") else ""]
+            antes_n = len(estado["rotas_milhas"])
+            adicionar_rota_milhas(" ".join(x for x in partes if x), estado, tg, chat)
+            if len(estado["rotas_milhas"]) > antes_n:
+                resumo.append(f"rota em milhas {nova.get('origem')}→{nova.get('destino')} adicionada")
+        if pedido.get("checar"):
+            for r in estado["rotas"] + estado["rotas_milhas"]:
+                r["proxima"] = None
+            estado["_forcar_rotas"] = True
+            resumo.append("checagem das rotas pedida")
+        status = "ok"
+    except Exception as e:
+        print(f"[web] erro ao aplicar pedido: {e}")
+        tg.enviar(chat, "⚠️ Não consegui aplicar a alteração feita no painel. Confira os campos e tente de novo.")
+        status = "erro"
+        resumo.append(str(e)[:120])
+    estado["web_aplicado"] = {"id": pid, "quando": agora().isoformat(timespec="minutes"),
+                              "status": status, "resumo": resumo}
+
+
+# --------------------------------------------------------------------------- #
 # Dados para o painel web (GitHub Pages lê data/estado.json)
 # --------------------------------------------------------------------------- #
 
@@ -1079,6 +1217,10 @@ def montar_painel(estado: dict) -> None:
         "nomes": {cod: LUGARES[codigo_cidade(cod)][0]
                   for r in estado["rotas"] + estado["rotas_milhas"]
                   for cod in (r["origem"], r["destino"]) if codigo_cidade(cod) in LUGARES},
+        "catalogo": [{"c": cod, "n": nome, "r": regiao} for cod, (nome, _, regiao) in LUGARES.items()],
+        "regioes": ["Europa", "América do Norte", "Caribe", "América do Sul", "Ásia", "África",
+                    "Oriente Médio", "Oceania", "Nordeste"],
+        "web": estado.get("web_aplicado"),
     }
 
 
@@ -1101,6 +1243,7 @@ def main() -> int:
         estado["bot_username"] = tg.quem_sou()
 
     etapas = [("comandos", lambda: ler_comandos(estado, tg, dono_fixo)),
+              ("painel-web", lambda: aplicar_pedidos_web(estado, tg)),
               ("promoções", lambda: checar_promocoes(estado, tg)),
               ("rotas", lambda: checar_rotas(estado, tg)),
               ("milhas", lambda: checar_rotas_milhas(estado, tg)),
