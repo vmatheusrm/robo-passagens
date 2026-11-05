@@ -1,7 +1,7 @@
 {
  "versao": 1,
  "chat_id": "886760360",
- "telegram_offset": 704794577,
+ "telegram_offset": 704794578,
  "config": {
   "origens": [
    "FOR"
@@ -9,12 +9,12 @@
   "destinos": [
    "BEL"
   ],
-  "tipo": "ambos",
+  "tipo": "nacional",
   "milhas": true,
   "bonus": false,
-  "preco_max": null,
-  "milhas_max": null,
-  "intervalo_horas": 12,
+  "preco_max": 450.0,
+  "milhas_max": 20000.0,
+  "intervalo_horas": 6,
   "limite_serpapi": 240,
   "pausado": false
  },
@@ -580,7 +580,7 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-05T01:30-03:00",
+  "atualizado": "2026-11-05T02:02-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
    {
@@ -1153,6 +1153,513 @@
   "serpapi_ligada": false,
   "seats_ligada": false,
   "proxima_rota": null,
-  "nomes": {}
+  "nomes": {},
+  "catalogo": [
+   {
+    "c": "FOR",
+    "n": "Fortaleza",
+    "r": "BR"
+   },
+   {
+    "c": "JJD",
+    "n": "Jericoacoara",
+    "r": "BR"
+   },
+   {
+    "c": "JDO",
+    "n": "Juazeiro do Norte",
+    "r": "BR"
+   },
+   {
+    "c": "REC",
+    "n": "Recife",
+    "r": "BR"
+   },
+   {
+    "c": "FEN",
+    "n": "Fernando de Noronha",
+    "r": "BR"
+   },
+   {
+    "c": "NAT",
+    "n": "Natal",
+    "r": "BR"
+   },
+   {
+    "c": "JPA",
+    "n": "João Pessoa",
+    "r": "BR"
+   },
+   {
+    "c": "MCZ",
+    "n": "Maceió",
+    "r": "BR"
+   },
+   {
+    "c": "AJU",
+    "n": "Aracaju",
+    "r": "BR"
+   },
+   {
+    "c": "SSA",
+    "n": "Salvador",
+    "r": "BR"
+   },
+   {
+    "c": "BPS",
+    "n": "Porto Seguro",
+    "r": "BR"
+   },
+   {
+    "c": "IOS",
+    "n": "Ilhéus",
+    "r": "BR"
+   },
+   {
+    "c": "PNZ",
+    "n": "Petrolina",
+    "r": "BR"
+   },
+   {
+    "c": "SLZ",
+    "n": "São Luís",
+    "r": "BR"
+   },
+   {
+    "c": "THE",
+    "n": "Teresina",
+    "r": "BR"
+   },
+   {
+    "c": "BEL",
+    "n": "Belém",
+    "r": "BR"
+   },
+   {
+    "c": "STM",
+    "n": "Santarém",
+    "r": "BR"
+   },
+   {
+    "c": "MAO",
+    "n": "Manaus",
+    "r": "BR"
+   },
+   {
+    "c": "MCP",
+    "n": "Macapá",
+    "r": "BR"
+   },
+   {
+    "c": "BVB",
+    "n": "Boa Vista",
+    "r": "BR"
+   },
+   {
+    "c": "PVH",
+    "n": "Porto Velho",
+    "r": "BR"
+   },
+   {
+    "c": "RBR",
+    "n": "Rio Branco",
+    "r": "BR"
+   },
+   {
+    "c": "PMW",
+    "n": "Palmas",
+    "r": "BR"
+   },
+   {
+    "c": "BSB",
+    "n": "Brasília",
+    "r": "BR"
+   },
+   {
+    "c": "GYN",
+    "n": "Goiânia",
+    "r": "BR"
+   },
+   {
+    "c": "CGB",
+    "n": "Cuiabá",
+    "r": "BR"
+   },
+   {
+    "c": "CGR",
+    "n": "Campo Grande",
+    "r": "BR"
+   },
+   {
+    "c": "BYO",
+    "n": "Bonito",
+    "r": "BR"
+   },
+   {
+    "c": "SAO",
+    "n": "São Paulo",
+    "r": "BR"
+   },
+   {
+    "c": "VCP",
+    "n": "Campinas",
+    "r": "BR"
+   },
+   {
+    "c": "RIO",
+    "n": "Rio de Janeiro",
+    "r": "BR"
+   },
+   {
+    "c": "CNF",
+    "n": "Belo Horizonte",
+    "r": "BR"
+   },
+   {
+    "c": "VIX",
+    "n": "Vitória",
+    "r": "BR"
+   },
+   {
+    "c": "UDI",
+    "n": "Uberlândia",
+    "r": "BR"
+   },
+   {
+    "c": "CWB",
+    "n": "Curitiba",
+    "r": "BR"
+   },
+   {
+    "c": "IGU",
+    "n": "Foz do Iguaçu",
+    "r": "BR"
+   },
+   {
+    "c": "FLN",
+    "n": "Florianópolis",
+    "r": "BR"
+   },
+   {
+    "c": "NVT",
+    "n": "Navegantes",
+    "r": "BR"
+   },
+   {
+    "c": "POA",
+    "n": "Porto Alegre",
+    "r": "BR"
+   },
+   {
+    "c": "LDB",
+    "n": "Londrina",
+    "r": "BR"
+   },
+   {
+    "c": "MGF",
+    "n": "Maringá",
+    "r": "BR"
+   },
+   {
+    "c": "JOI",
+    "n": "Joinville",
+    "r": "BR"
+   },
+   {
+    "c": "CXJ",
+    "n": "Caxias do Sul",
+    "r": "BR"
+   },
+   {
+    "c": "IMP",
+    "n": "Imperatriz",
+    "r": "BR"
+   },
+   {
+    "c": "LIS",
+    "n": "Lisboa",
+    "r": "Europa"
+   },
+   {
+    "c": "OPO",
+    "n": "Porto (Portugal)",
+    "r": "Europa"
+   },
+   {
+    "c": "MAD",
+    "n": "Madri",
+    "r": "Europa"
+   },
+   {
+    "c": "BCN",
+    "n": "Barcelona",
+    "r": "Europa"
+   },
+   {
+    "c": "PAR",
+    "n": "Paris",
+    "r": "Europa"
+   },
+   {
+    "c": "LON",
+    "n": "Londres",
+    "r": "Europa"
+   },
+   {
+    "c": "ROM",
+    "n": "Roma",
+    "r": "Europa"
+   },
+   {
+    "c": "MIL",
+    "n": "Milão",
+    "r": "Europa"
+   },
+   {
+    "c": "FRA",
+    "n": "Frankfurt",
+    "r": "Europa"
+   },
+   {
+    "c": "MUC",
+    "n": "Munique",
+    "r": "Europa"
+   },
+   {
+    "c": "AMS",
+    "n": "Amsterdã",
+    "r": "Europa"
+   },
+   {
+    "c": "BRU",
+    "n": "Bruxelas",
+    "r": "Europa"
+   },
+   {
+    "c": "ZRH",
+    "n": "Zurique",
+    "r": "Europa"
+   },
+   {
+    "c": "VIE",
+    "n": "Viena",
+    "r": "Europa"
+   },
+   {
+    "c": "PRG",
+    "n": "Praga",
+    "r": "Europa"
+   },
+   {
+    "c": "ATH",
+    "n": "Atenas",
+    "r": "Europa"
+   },
+   {
+    "c": "DUB",
+    "n": "Dublin",
+    "r": "Europa"
+   },
+   {
+    "c": "IST",
+    "n": "Istambul",
+    "r": "Europa"
+   },
+   {
+    "c": "MIA",
+    "n": "Miami",
+    "r": "América do Norte"
+   },
+   {
+    "c": "FLL",
+    "n": "Fort Lauderdale",
+    "r": "América do Norte"
+   },
+   {
+    "c": "MCO",
+    "n": "Orlando",
+    "r": "América do Norte"
+   },
+   {
+    "c": "NYC",
+    "n": "Nova York",
+    "r": "América do Norte"
+   },
+   {
+    "c": "BOS",
+    "n": "Boston",
+    "r": "América do Norte"
+   },
+   {
+    "c": "ATL",
+    "n": "Atlanta",
+    "r": "América do Norte"
+   },
+   {
+    "c": "LAX",
+    "n": "Los Angeles",
+    "r": "América do Norte"
+   },
+   {
+    "c": "LAS",
+    "n": "Las Vegas",
+    "r": "América do Norte"
+   },
+   {
+    "c": "YTO",
+    "n": "Toronto",
+    "r": "América do Norte"
+   },
+   {
+    "c": "MEX",
+    "n": "Cidade do México",
+    "r": "América do Norte"
+   },
+   {
+    "c": "CUN",
+    "n": "Cancún",
+    "r": "Caribe"
+   },
+   {
+    "c": "PUJ",
+    "n": "Punta Cana",
+    "r": "Caribe"
+   },
+   {
+    "c": "PTY",
+    "n": "Cidade do Panamá",
+    "r": "Caribe"
+   },
+   {
+    "c": "AUA",
+    "n": "Aruba",
+    "r": "Caribe"
+   },
+   {
+    "c": "CUR",
+    "n": "Curaçao",
+    "r": "Caribe"
+   },
+   {
+    "c": "BUE",
+    "n": "Buenos Aires",
+    "r": "América do Sul"
+   },
+   {
+    "c": "BRC",
+    "n": "Bariloche",
+    "r": "América do Sul"
+   },
+   {
+    "c": "SCL",
+    "n": "Santiago",
+    "r": "América do Sul"
+   },
+   {
+    "c": "MVD",
+    "n": "Montevidéu",
+    "r": "América do Sul"
+   },
+   {
+    "c": "PDP",
+    "n": "Punta del Este",
+    "r": "América do Sul"
+   },
+   {
+    "c": "LIM",
+    "n": "Lima",
+    "r": "América do Sul"
+   },
+   {
+    "c": "CUZ",
+    "n": "Cusco",
+    "r": "América do Sul"
+   },
+   {
+    "c": "BOG",
+    "n": "Bogotá",
+    "r": "América do Sul"
+   },
+   {
+    "c": "CTG",
+    "n": "Cartagena",
+    "r": "América do Sul"
+   },
+   {
+    "c": "ASU",
+    "n": "Assunção",
+    "r": "América do Sul"
+   },
+   {
+    "c": "DXB",
+    "n": "Dubai",
+    "r": "Oriente Médio"
+   },
+   {
+    "c": "DOH",
+    "n": "Doha",
+    "r": "Oriente Médio"
+   },
+   {
+    "c": "TYO",
+    "n": "Tóquio",
+    "r": "Ásia"
+   },
+   {
+    "c": "BKK",
+    "n": "Bangkok",
+    "r": "Ásia"
+   },
+   {
+    "c": "CPT",
+    "n": "Cidade do Cabo",
+    "r": "África"
+   },
+   {
+    "c": "JNB",
+    "n": "Joanesburgo",
+    "r": "África"
+   },
+   {
+    "c": "CAI",
+    "n": "Cairo",
+    "r": "África"
+   },
+   {
+    "c": "SYD",
+    "n": "Sydney",
+    "r": "Oceania"
+   }
+  ],
+  "regioes": [
+   "Europa",
+   "América do Norte",
+   "Caribe",
+   "América do Sul",
+   "Ásia",
+   "África",
+   "Oriente Médio",
+   "Oceania",
+   "Nordeste"
+  ],
+  "web": {
+   "id": "mw32agwb",
+   "quando": "2026-11-05T02:02-03:00",
+   "status": "ok",
+   "resumo": [
+    "4 filtro(s) alterado(s)",
+    "checagem das rotas pedida"
+   ]
+  }
+ },
+ "web_ultimo_id": "mw32agwb",
+ "web_aplicado": {
+  "id": "mw32agwb",
+  "quando": "2026-11-05T02:02-03:00",
+  "status": "ok",
+  "resumo": [
+   "4 filtro(s) alterado(s)",
+   "checagem das rotas pedida"
+  ]
  }
 }
