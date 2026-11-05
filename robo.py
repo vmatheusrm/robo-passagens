@@ -22,6 +22,7 @@ import os
 import re
 import sys
 import unicodedata
+from email.utils import parsedate_to_datetime
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote
@@ -46,7 +47,6 @@ FEEDS = {
     "Melhores Destinos": "https://www.melhoresdestinos.com.br/feed",
     "Passageiro de Primeira": "https://passageirodeprimeira.com/feed",
     "Pontos pra Voar": "https://pontospravoar.com/feed",
-    "Passagens Imperdíveis": "https://passagensimperdiveis.com.br/feed",
 }
 
 MAX_ALERTAS_POR_EXECUCAO = 8
@@ -93,11 +93,12 @@ TEXTO_AJUDA = """<b>✈️ Robô de Passagens — comandos</b>
    origem, destino, janela de datas e milhas máximas
 
 <b>Geral</b>
+/painel — link da página com gráficos e promoções
 /status — mostra suas configurações
 /pausar e /retomar — desliga/liga os alertas
 /ajuda — esta mensagem
 
-Os comandos são lidos a cada ~30 min (quando o robô roda)."""
+Os comandos são lidos a cada ~15 min (quando o robô roda)."""
 
 
 # --------------------------------------------------------------------------- #
@@ -164,6 +165,26 @@ def br(d: date | str) -> str:
     return d.strftime("%d/%m/%Y")
 
 
+def url_painel() -> str | None:
+    repo = os.getenv("GITHUB_REPOSITORY", "")       # ex.: vmatheusrm/robo-passagens
+    if "/" not in repo:
+        return None
+    dono, nome = repo.split("/", 1)
+    return f"https://{dono.lower()}.github.io/{nome}/"
+
+
+def registrar_alerta(estado: dict, tipo: str, titulo: str, valor: str = "", link: str = "") -> None:
+    estado["alertas"].append({"quando": agora().isoformat(timespec="minutes"), "tipo": tipo,
+                              "titulo": titulo, "valor": valor, "link": link})
+
+
+def data_iso(texto: str) -> str | None:
+    try:
+        return parsedate_to_datetime(texto).astimezone(FUSO).isoformat(timespec="minutes")
+    except Exception:
+        return None
+
+
 def codigo_cidade(codigo: str) -> str:
     codigo = codigo.upper()
     return AEROPORTO_PARA_CIDADE.get(codigo, codigo)
@@ -200,6 +221,9 @@ def estado_inicial() -> dict:
         "uso_serpapi": {"mes": "", "usadas": 0, "avisado": False},
         "uso_seats": {"dia": "", "usadas": 0},
         "erros_feed": {},
+        "alertas": [],             # histórico dos alertas enviados (para o painel)
+        "bot_username": None,
+        "painel": {},              # dados prontos para a página web
     }
 
 
@@ -220,7 +244,8 @@ def carregar_estado() -> dict:
 def salvar_estado(estado: dict) -> None:
     ARQUIVO_ESTADO.parent.mkdir(parents=True, exist_ok=True)
     estado["vistos"] = estado["vistos"][-3000:]
-    estado["recentes"] = estado["recentes"][-60:]
+    estado["recentes"] = estado["recentes"][-120:]
+    estado["alertas"] = estado["alertas"][-150:]
     estado.pop("ultimas_promocoes", None)
     ARQUIVO_ESTADO.write_text(json.dumps(estado, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -241,6 +266,13 @@ class Telegram:
                          timeout=TIMEOUT)
         r.raise_for_status()
         return r.json().get("result", [])
+
+    def quem_sou(self) -> str | None:
+        try:
+            r = requests.get(f"{self.base}/getMe", timeout=TIMEOUT)
+            return r.json().get("result", {}).get("username")
+        except Exception:
+            return None
 
     def enviar(self, chat_id, texto: str) -> None:
         if not chat_id:
@@ -305,6 +337,8 @@ def texto_status(estado: dict) -> str:
         f"Buscas SerpApi no mês: {uso.get('usadas', 0)}/{c['limite_serpapi']}"
         + ("" if os.getenv("SERPAPI_KEY") else " (chave não configurada)"),
     ]
+    if url_painel():
+        linhas.append(f"\n📊 Painel: {url_painel()}")
     return "\n".join(linhas)
 
 
@@ -345,6 +379,11 @@ def processar_comando(texto: str, estado: dict, tg: Telegram, chat_id) -> None:
 
     elif cmd == "/status":
         responder(texto_status(estado))
+
+    elif cmd == "/painel":
+        url = url_painel()
+        responder(f"📊 Seu painel: {url}\n(atualiza a cada rodada do robô)" if url
+                  else "O painel só funciona quando o robô roda no GitHub.")
 
     elif cmd in ("/origens", "/origem"):
         if not args:
@@ -706,7 +745,8 @@ def checar_promocoes(estado: dict, tg: Telegram) -> None:
     alertas = []
     for p in novos:
         estado["vistos"].append(p["id"])
-        estado["recentes"].append({**p, "texto": p["texto"][:1000]})
+        estado["recentes"].append({**p, "texto": p["texto"][:700],
+                                   "lido_em": agora().isoformat(timespec="minutes")})
         a = avaliar_post(p, config)
         if a:
             alertas.append(a)
@@ -718,6 +758,8 @@ def checar_promocoes(estado: dict, tg: Telegram) -> None:
         return
     for a in alertas[:MAX_ALERTAS_POR_EXECUCAO]:
         tg.enviar(estado["chat_id"], formatar_promo(a))
+        valor = reais(a["preco"]) if a["preco"] else (f"{milhar(a['milhas'])} milhas" if a["milhas"] else "")
+        registrar_alerta(estado, "promocao", a["titulo"], valor, a["link"])
     if len(alertas) > MAX_ALERTAS_POR_EXECUCAO:
         tg.enviar(estado["chat_id"], f"…e mais {len(alertas) - MAX_ALERTAS_POR_EXECUCAO} promoções. Mande /ultimas para ver.")
 
@@ -851,6 +893,9 @@ def checar_rotas(estado: dict, tg: Telegram) -> None:
             r["proxima"] = (agora() + timedelta(hours=2)).isoformat()
             continue
         r["proxima"] = (agora() + timedelta(hours=c["intervalo_horas"])).isoformat()
+        r["nivel"] = res.get("nivel")
+        r["faixa"] = res.get("faixa")
+        r["cia"] = res.get("cia")
         preco = res["preco"]
         if not preco:
             if forcar:
@@ -866,6 +911,8 @@ def checar_rotas(estado: dict, tg: Telegram) -> None:
         if motivo or forcar or primeira_checagem:
             if motivo:
                 r["ultimo_alerta"] = preco
+                registrar_alerta(estado, "rota", f"{r['origem']}→{r['destino']} · {motivo}",
+                                 reais(preco), link_google_flights(r))
             if not c["pausado"] or forcar:
                 tg.enviar(chat, formatar_rota(r, res, motivo, anterior))
 
@@ -978,6 +1025,10 @@ def checar_rotas_milhas(estado: dict, tg: Telegram) -> None:
         r["avisados"] = r["avisados"][-300:]
         if ofertas:
             r["menor"] = min(r["menor"] or ofertas[0]["milhas"], ofertas[0]["milhas"])
+        r["ofertas"] = ofertas[:10]
+        for o in novas[:3]:
+            registrar_alerta(estado, "milhas", f"{r['origem']}→{r['destino']} · {br(o['data'])} · {o['programa']}",
+                             f"{milhar(o['milhas'])} milhas")
         if (novas or forcar) and (not estado["config"]["pausado"] or forcar):
             mostrar = novas[:6] if novas else ofertas[:3]
             if not mostrar:
@@ -991,6 +1042,44 @@ def checar_rotas_milhas(estado: dict, tg: Telegram) -> None:
                               + (f" · {esc(o['cias'])}" if o['cias'] else ""))
             linhas.append("Confirme no site do programa antes de transferir pontos (as taxas não estão incluídas).")
             tg.enviar(chat, "\n".join(linhas))
+
+
+# --------------------------------------------------------------------------- #
+# Dados para o painel web (GitHub Pages lê data/estado.json)
+# --------------------------------------------------------------------------- #
+
+CONFIG_ABERTA = {**CONFIG_PADRAO, "origens": [], "destinos": [], "tipo": "ambos",
+                 "milhas": True, "bonus": True, "preco_max": None, "milhas_max": None}
+
+
+def montar_painel(estado: dict) -> None:
+    promocoes = []
+    for p in reversed(estado["recentes"]):
+        geral = avaliar_post(p, CONFIG_ABERTA)
+        if not geral:
+            continue
+        promocoes.append({
+            "titulo": p["titulo"], "link": p["link"], "fonte": p["fonte"],
+            "tipo": geral["tipo"], "preco": geral["preco"], "milhas": geral["milhas"],
+            "eh_milhas": geral["eh_milhas"], "bate": avaliar_post(p, estado["config"]) is not None,
+            "publicado": data_iso(p.get("data", "")) or p.get("lido_em"),
+        })
+    proxima = None
+    for r in estado["rotas"]:
+        if r.get("proxima") and (proxima is None or r["proxima"] < proxima):
+            proxima = r["proxima"]
+    estado["painel"] = {
+        "atualizado": agora().isoformat(timespec="minutes"),
+        "bot": estado.get("bot_username"),
+        "promocoes": promocoes,
+        "fontes": {f: ("erro" if estado["erros_feed"].get(f) else "ok") for f in FEEDS},
+        "serpapi_ligada": bool(os.getenv("SERPAPI_KEY")),
+        "seats_ligada": bool(os.getenv("SEATS_AERO_KEY")),
+        "proxima_rota": proxima,
+        "nomes": {cod: LUGARES[codigo_cidade(cod)][0]
+                  for r in estado["rotas"] + estado["rotas_milhas"]
+                  for cod in (r["origem"], r["destino"]) if codigo_cidade(cod) in LUGARES},
+    }
 
 
 # --------------------------------------------------------------------------- #
@@ -1008,11 +1097,14 @@ def main() -> int:
     if dono_fixo:
         estado["chat_id"] = dono_fixo
     tg = Telegram(token)
+    if not estado.get("bot_username"):
+        estado["bot_username"] = tg.quem_sou()
 
     etapas = [("comandos", lambda: ler_comandos(estado, tg, dono_fixo)),
               ("promoções", lambda: checar_promocoes(estado, tg)),
               ("rotas", lambda: checar_rotas(estado, tg)),
-              ("milhas", lambda: checar_rotas_milhas(estado, tg))]
+              ("milhas", lambda: checar_rotas_milhas(estado, tg)),
+              ("painel", lambda: montar_painel(estado))]
     for nome, etapa in etapas:
         try:
             etapa()

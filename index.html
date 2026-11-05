@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Painel · Robô de Passagens</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232a78d6' d='M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f4f3ef; --surface:#fcfcfb; --surface-2:#f0efec; --line:#e2e0da;
+  --text:#0b0b0b; --text-2:#52514e; --muted:#7a7972;
+  --accent:#2a78d6; --accent-soft:#e3eefb; --accent-ink:#1c5cab;
+  --band:#cde2fb; --target:#eb6834;
+  --good:#0ca30c; --good-ink:#006300; --warn:#fab219; --warn-ink:#8a5a00; --bad:#d03b3b; --bad-ink:#b02a2a;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.04);
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121211; --surface:#1a1a19; --surface-2:#232321; --line:#2e2e2b;
+    --text:#f0efec; --text-2:#c3c2b7; --muted:#8f8e86;
+    --accent:#3987e5; --accent-soft:#1b2a3d; --accent-ink:#86b6ef;
+    --band:#1f3654; --target:#d95926;
+    --good-ink:#5fd35f; --warn-ink:#fab219; --bad-ink:#e66767;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121211; --surface:#1a1a19; --surface-2:#232321; --line:#2e2e2b;
+  --text:#f0efec; --text-2:#c3c2b7; --muted:#8f8e86;
+  --accent:#3987e5; --accent-soft:#1b2a3d; --accent-ink:#86b6ef;
+  --band:#1f3654; --target:#d95926;
+  --good-ink:#5fd35f; --warn-ink:#fab219; --bad-ink:#e66767;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 48px}
+.num{font-variant-numeric:tabular-nums}
+
+/* topo */
+header.top{padding:28px 0 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:44px;height:44px;border-radius:12px;background:var(--accent);display:grid;place-items:center;flex:none}
+.logo svg{width:24px;height:24px;fill:#fff;transform:rotate(45deg)}
+h1{font-size:22px;line-height:1.2;margin:0;letter-spacing:-.01em}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;cursor:pointer;text-decoration:none}
+.btn:hover{text-decoration:none;border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn svg{width:16px;height:16px;fill:currentColor}
+.icon-btn{width:36px;padding:0;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--surface-2);color:var(--text-2)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.pill.on .dot{background:var(--good)} .pill.on{color:var(--good-ink)}
+.pill.off .dot{background:var(--warn)} .pill.off{color:var(--warn-ink)}
+
+/* cartões */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+section{margin-top:28px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+h2{font-size:17px;margin:0;letter-spacing:-.005em}
+.sec-head .hint{color:var(--muted);font-size:13px}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{padding:16px}
+.kpi .lbl{font-size:12px;color:var(--text-2);font-weight:500}
+.kpi .val{font-size:26px;font-weight:650;letter-spacing:-.02em;margin-top:6px;line-height:1.1}
+.kpi .foot{font-size:12px;color:var(--muted);margin-top:6px}
+.meter{height:6px;border-radius:3px;background:var(--surface-2);margin-top:10px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:3px}
+
+/* rotas */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.route{padding:16px 16px 10px;display:flex;flex-direction:column}
+.route-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.iata{font-size:20px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.iata svg{width:16px;height:16px;fill:var(--muted)}
+.cities{font-size:13px;color:var(--text-2)}
+.dates{font-size:12px;color:var(--muted);margin-top:2px}
+.price{text-align:right}
+.price .now{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.delta{font-size:12px;font-weight:600}
+.delta.down{color:var(--good-ink)} .delta.up{color:var(--bad-ink)} .delta.flat{color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.tag{font-size:12px;padding:2px 8px;border-radius:6px;background:var(--surface-2);color:var(--text-2);white-space:nowrap}
+.tag b{color:var(--text);font-weight:600}
+.lvl{display:inline-flex;align-items:center;gap:5px}
+.lvl svg{width:12px;height:12px}
+.lvl.low{color:var(--good-ink)} .lvl.typical{color:var(--warn-ink)} .lvl.high{color:var(--bad-ink)}
+.chart{position:relative;margin-top:6px;height:150px}
+.chart svg{display:block;width:100%;height:100%;overflow:visible}
+.chart .empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px;text-align:center;padding:0 20px}
+.tip{position:absolute;pointer-events:none;background:var(--text);color:var(--bg);font-size:12px;padding:6px 8px;border-radius:8px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .1s;z-index:2}
+.tip b{font-size:13px}
+.legend{display:flex;gap:14px;font-size:11px;color:var(--muted);margin:2px 0 6px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.sw{width:14px;height:2px;background:var(--accent);display:inline-block}
+.sw.t{background:none;border-top:2px dashed var(--target);height:0}
+.sw.b{height:8px;background:var(--band);border-radius:2px}
+.route-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:8px;padding-top:8px;font-size:12px;color:var(--muted)}
+
+/* milhas */
+.miles{padding:16px}
+.miles table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+.miles td,.miles th{padding:6px 4px;border-top:1px solid var(--line);text-align:left}
+.miles th{color:var(--muted);font-weight:500;font-size:12px;border-top:none}
+.miles td.r,.miles th.r{text-align:right}
+
+/* promoções */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;background:var(--surface-2);border-radius:10px;padding:3px}
+.seg button{border:0;background:none;font:inherit;font-size:13px;padding:6px 12px;border-radius:8px;color:var(--text-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);font-weight:600;box-shadow:var(--shadow)}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--text-2);font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.search{flex:1;min-width:180px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;padding:0 12px}
+.promos{display:flex;flex-direction:column}
+.promo{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
+.promo:first-child{border-top:none}
+.ptype{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--surface-2);font-size:11px;font-weight:700;color:var(--text-2);letter-spacing:.02em}
+.ptype.internacional{background:var(--accent-soft);color:var(--accent-ink)}
+.ptitle{font-weight:550;color:var(--text);line-height:1.35;display:block}
+.pmeta{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.match{color:var(--good-ink);font-weight:600}
+.pval{text-align:right;white-space:nowrap}
+.pval .v{font-weight:700;font-size:15px}
+.pval .u{font-size:11px;color:var(--muted)}
+.more{padding:12px;text-align:center;border-top:1px solid var(--line)}
+.none{padding:28px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+/* alertas e config */
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:12px}
+.feed{padding:6px 16px;max-height:420px;overflow:auto}
+.ev{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.ev:first-child{border-top:none}
+.evi{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2)}
+.evi svg{width:14px;height:14px;fill:var(--text-2)}
+.ev .t{font-size:13px;line-height:1.35}
+.ev .m{font-size:12px;color:var(--muted);margin-top:2px}
+.cfg{padding:16px}
+.cfg dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 14px;font-size:13px}
+.cfg dt{color:var(--muted)}
+.cfg dd{margin:0;display:flex;flex-wrap:wrap;gap:4px}
+.how{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--text-2)}
+code{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--surface-2);padding:2px 6px;border-radius:5px;color:var(--text)}
+.cmds{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.cmds code{cursor:pointer}
+footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.src{display:inline-flex;align-items:center;gap:5px;margin-right:12px}
+.src .dot.ok{background:var(--good)} .src .dot.erro{background:var(--bad)}
+.banner{padding:16px;margin-top:8px;border-left:4px solid var(--warn)}
+.skel{height:120px;border-radius:var(--r);background:linear-gradient(90deg,var(--surface-2),var(--surface),var(--surface-2));background-size:200% 100%;animation:sk 1.2s infinite}
+@keyframes sk{to{background-position:-200% 0}}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:8px 14px;border-radius:10px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+@media (max-width:420px){.grid{grid-template-columns:1fr}.kpi .val{font-size:22px}.promo{grid-template-columns:1fr auto}.ptype{display:none}h1{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></div>
+      <div>
+        <h1>Robô de Passagens <span style="color:var(--muted);font-weight:500">· VM</span></h1>
+        <div class="sub" id="sub">Carregando…</div>
+      </div>
+    </div>
+    <div class="actions">
+      <span class="pill" id="status"><span class="dot"></span><span>—</span></span>
+      <a class="btn primary" id="botlink" href="#" target="_blank" rel="noopener" hidden>
+        <svg viewBox="0 0 24 24"><path d="M9.8 15.6 9.6 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7L21 5.4c.3-1.2-.4-1.7-1.2-1.4L3.3 10.3c-1.1.4-1.1 1.1-.2 1.4l4.2 1.3 9.8-6.2c.5-.3.9-.1.5.2z"/></svg>
+        Abrir o bot</a>
+      <button class="btn icon-btn" id="reload" title="Atualizar dados" aria-label="Atualizar dados"><svg viewBox="0 0 24 24"><path d="M17.7 6.3A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.8-4.2L13 11h7V4z"/></svg></button>
+      <button class="btn icon-btn" id="theme" title="Tema claro/escuro" aria-label="Alternar tema"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.4A5.5 5.5 0 0 1 13.4 3.1 9 9 0 0 0 12 3z"/></svg></button>
+    </div>
+  </header>
+
+  <div id="app">
+    <div class="kpis"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+  </div>
+
+  <footer><div id="sources"></div><div>Dados lidos de <code>data/estado.json</code> · atualizado pelo GitHub Actions</div></footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (s, el = document) => el.querySelector(s);
+  const app = $("#app");
+  const BRL = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
+  const NUM = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
+  const reais = v => v == null ? "—" : BRL.format(v);
+  const milhas = v => v == null ? "—" : NUM.format(v);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : "#";
+  const ICON = {
+    plane: '<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24"><path d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"/></svg>',
+    swap: '<svg viewBox="0 0 24 24"><path d="M7 7h12l-3-3 1.4-1.4L22.8 8l-5.4 5.4L16 12l3-3H7zm10 10H5l3 3-1.4 1.4L1.2 16l5.4-5.4L8 12l-3 3h12z"/></svg>',
+    bell: '<svg viewBox="0 0 24 24"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6V11a6 6 0 0 0-5-5.9V4a1 1 0 0 0-2 0v1.1A6 6 0 0 0 6 11v5l-2 2v1h16v-1z"/></svg>',
+    ticket: '<svg viewBox="0 0 24 24"><path d="M22 10V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 1 0 4v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4z"/></svg>',
+    down: '<svg viewBox="0 0 12 12"><path fill="currentColor" d="M6 10 1 4h10z"/></svg>',
+    mid: '<svg viewBox="0 0 12 12"><rect fill="currentColor" x="1" y="5" width="10" height="2" rx="1"/></svg>',
+    up: '<svg viewBox="0 0 12 12"><path fill="currentColor" d="M6 2l5 6H1z"/></svg>',
+  };
+
+  /* ---------- tempo ---------- */
+  const parse = s => { if (!s) return null; const d = new Date(String(s).replace(" ", "T")); return isNaN(d) ? null : d; };
+  function rel(d) {
+    if (!d) return "";
+    const m = Math.round((Date.now() - d.getTime()) / 60000);
+    if (m < 1) return "agora";
+    if (m < 60) return `há ${m} min`;
+    const h = Math.round(m / 60);
+    if (h < 24) return `há ${h} h`;
+    const dd = Math.round(h / 24);
+    return dd === 1 ? "ontem" : `há ${dd} dias`;
+  }
+  const dBR = s => { const d = parse(s + (String(s).length === 10 ? "T12:00" : "")); return d ? d.toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" }).replace(/ de /g, " ").replace(".", "") : s; };
+  const dShort = d => d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }) + " " + d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+
+  /* ---------- tema ---------- */
+  try { const t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  $("#theme").onclick = () => {
+    const dark = getComputedStyle(document.documentElement).colorScheme.includes("dark");
+    const t = dark ? "light" : "dark";
+    document.documentElement.dataset.theme = t;
+    try { localStorage.setItem("tema", t); } catch (e) {}
+    if (DATA) renderRoutes();
+  };
+
+  /* ---------- estado da página ---------- */
+  let DATA = null;
+  const UI = { modo: "meus", tipo: "tudo", q: "", limite: 25 };
+  try { Object.assign(UI, JSON.parse(localStorage.getItem("filtros") || "{}"), { limite: 25 }); } catch (e) {}
+  const saveUI = () => { try { localStorage.setItem("filtros", JSON.stringify({ modo: UI.modo, tipo: UI.tipo })); } catch (e) {} };
+
+  function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.opacity = 1; clearTimeout(toast.t); toast.t = setTimeout(() => t.style.opacity = 0, 1600); }
+
+  async function load() {
+    try {
+      const r = await fetch("data/estado.json?t=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) throw new Error(r.status);
+      DATA = await r.json();
+      render();
+    } catch (e) {
+      app.innerHTML = `<div class="card banner"><b>Não consegui carregar os dados.</b><br><span style="color:var(--text-2);font-size:14px">Confira se o robô já rodou pelo menos uma vez depois de atualizar o <code>robo.py</code>. Erro: ${esc(e.message)}</span></div>`;
+      $("#sub").textContent = "Sem dados";
+    }
+  }
+  $("#reload").onclick = () => { load(); toast("Dados atualizados"); };
+
+  /* ---------- render geral ---------- */
+  function render() {
+    const d = DATA, p = d.painel || {}, c = d.config || {};
+    const upd = parse(p.atualizado);
+    $("#sub").textContent = upd ? `Atualizado ${rel(upd)} · ${dShort(upd)} · roda sozinho a cada ~15 min` : "Aguardando a primeira rodada com o painel";
+    const st = $("#status");
+    st.className = "pill " + (c.pausado ? "off" : "on");
+    st.lastElementChild.textContent = c.pausado ? "Alertas pausados" : "Alertas ligados";
+    const bot = p.bot || d.bot_username;
+    if (bot) { const a = $("#botlink"); a.href = "https://t.me/" + encodeURIComponent(bot); a.hidden = false; }
+
+    const promos = p.promocoes || [];
+    const dia = Date.now() - 864e5;
+    const meus = promos.filter(x => x.bate);
+    const meus24 = meus.filter(x => (parse(x.publicado) || 0) > dia).length;
+    const rotas = d.rotas || [];
+    const uso = d.uso_serpapi || {};
+    const lim = c.limite_serpapi || 240;
+    const usadas = uso.usadas || 0;
+    const melhor = rotas.filter(r => r.ultimo_preco && r.teto).map(r => ({ r, g: r.ultimo_preco / r.teto })).sort((a, b) => a.g - b.g)[0];
+    const alertas = d.alertas || [];
+    const alertas7 = alertas.filter(a => (parse(a.quando) || 0) > Date.now() - 7 * 864e5).length;
+
+    app.innerHTML = `
+      <div class="kpis">
+        <div class="card kpi"><div class="lbl">Promoções com seus filtros</div><div class="val num">${meus.length}</div><div class="foot">${meus24} nas últimas 24 h · de ${promos.length} lidas</div></div>
+        <div class="card kpi"><div class="lbl">Alertas enviados (7 dias)</div><div class="val num">${alertas7}</div><div class="foot">${alertas.length} no histórico</div></div>
+        <div class="card kpi"><div class="lbl">${melhor ? "Rota mais perto do alvo" : "Rotas monitoradas"}</div>
+          ${melhor ? `<div class="val num">${esc(melhor.r.origem)}→${esc(melhor.r.destino)}</div><div class="foot">${reais(melhor.r.ultimo_preco)} · alvo ${reais(melhor.r.teto)} (${melhor.g <= 1 ? "abaixo do alvo" : "+" + Math.round((melhor.g - 1) * 100) + "%"})</div>`
+                   : `<div class="val num">${rotas.length + (d.rotas_milhas || []).length}</div><div class="foot">${rotas.length} em R$ · ${(d.rotas_milhas || []).length} em milhas</div>`}</div>
+        <div class="card kpi"><div class="lbl">Buscas de preço no mês</div><div class="val num">${usadas}<span style="font-size:15px;color:var(--muted);font-weight:500"> / ${lim}</span></div>
+          <div class="meter" role="img" aria-label="${usadas} de ${lim} buscas usadas"><i style="width:${Math.min(100, usadas / lim * 100)}%"></i></div>
+          <div class="foot">${p.serpapi_ligada ? "SerpApi ligada" : "SerpApi não configurada"}</div></div>
+      </div>
+
+      <section id="sec-rotas">
+        <div class="sec-head"><h2>Rotas monitoradas</h2><span class="hint">${p.proxima_rota ? "Próxima checagem " + dShort(parse(p.proxima_rota)) : "Preços do Google Flights, em reais"}</span></div>
+        <div id="routes"></div>
+      </section>
+
+      <section id="sec-milhas" hidden>
+        <div class="sec-head"><h2>Rotas em milhas</h2><span class="hint">Smiles e Azul Fidelidade · via Seats.aero</span></div>
+        <div class="grid" id="miles"></div>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Promoções</h2><span class="hint" id="pcount"></span></div>
+        <div class="filters">
+          <div class="seg" role="group" aria-label="Quais promoções">
+            <button data-modo="meus">Com meus filtros</button><button data-modo="todas">Todas</button>
+          </div>
+          ${["tudo", "nacional", "internacional", "milhas", "bonus"].map(t => `<button class="chip" data-tipo="${t}">${{ tudo: "Tudo", nacional: "Nacional", internacional: "Internacional", milhas: "Milhas", bonus: "Bônus de pontos" }[t]}</button>`).join("")}
+          <input class="search" id="q" type="search" placeholder="Buscar destino, companhia…" value="${esc(UI.q)}">
+        </div>
+        <div class="card promos" id="promos"></div>
+      </section>
+
+      <section class="two">
+        <div>
+          <div class="sec-head"><h2>Alertas enviados</h2><span class="hint">o que chegou no seu Telegram</span></div>
+          <div class="card feed" id="alerts"></div>
+        </div>
+        <div>
+          <div class="sec-head"><h2>Suas configurações</h2></div>
+          <div class="card cfg" id="cfg"></div>
+        </div>
+      </section>`;
+
+    renderRoutes(); renderMiles(); renderPromos(); renderAlerts(); renderCfg(); renderSources();
+
+    app.querySelectorAll("[data-modo]").forEach(b => b.onclick = () => { UI.modo = b.dataset.modo; UI.limite = 25; saveUI(); renderPromos(); });
+    app.querySelectorAll("[data-tipo]").forEach(b => b.onclick = () => { UI.tipo = b.dataset.tipo; UI.limite = 25; saveUI(); renderPromos(); });
+    $("#q").oninput = e => { UI.q = e.target.value; UI.limite = 25; renderPromos(); };
+  }
+
+  /* ---------- rotas ---------- */
+  const nome = cod => (DATA.painel && DATA.painel.nomes && DATA.painel.nomes[cod]) || cod;
+  function lvlTag(n, faixa) {
+    if (!n) return "";
+    const m = { low: ["low", "Preço baixo", ICON.down], typical: ["typical", "Preço normal", ICON.mid], high: ["high", "Preço alto", ICON.up] }[n];
+    if (!m) return "";
+    return `<span class="tag lvl ${m[0]}">${m[2]} ${m[1]}${faixa ? ` <span style="color:var(--muted);font-weight:400">· normal ${reais(faixa[0])}–${reais(faixa[1])}</span>` : ""}</span>`;
+  }
+  function renderRoutes() {
+    const box = $("#routes"); if (!box) return;
+    const rotas = DATA.rotas || [];
+    if (!rotas.length) {
+      box.innerHTML = `<div class="card none">Nenhuma rota ainda. No Telegram, mande por exemplo<br><code>/rota FOR LIS 10/03/2027 25/03/2027 3500</code>${DATA.painel && !DATA.painel.serpapi_ligada ? "<br><span style='font-size:12px'>Para checar preços, configure a chave da SerpApi (veja o guia).</span>" : ""}</div>`;
+      return;
+    }
+    box.className = "grid";
+    box.innerHTML = rotas.map((r, i) => {
+      const h = (r.historico || []).map(([t, v]) => ({ t: parse(t), v })).filter(x => x.t && x.v);
+      const prev = h.length > 1 ? h[h.length - 2].v : null;
+      const now = r.ultimo_preco;
+      let delta = "";
+      if (now && prev) {
+        const pct = Math.round((now - prev) / prev * 100);
+        delta = pct < 0 ? `<div class="delta down">▼ ${Math.abs(pct)}% vs. checagem anterior</div>` : pct > 0 ? `<div class="delta up">▲ ${pct}% vs. checagem anterior</div>` : `<div class="delta flat">sem mudança</div>`;
+      }
+      const datas = dBR(r.ida) + (r.volta ? " → " + dBR(r.volta) : " · só ida");
+      return `<article class="card route">
+        <div class="route-top">
+          <div>
+            <div class="iata">${esc(r.origem)} ${r.volta ? ICON.swap : ICON.arrow} ${esc(r.destino)}</div>
+            <div class="cities">${esc(nome(r.origem))} → ${esc(nome(r.destino))}</div>
+            <div class="dates">${esc(datas)}</div>
+          </div>
+          <div class="price">${now ? `<div class="now num">${reais(now)}</div>${delta}` : `<div class="delta flat">ainda não checada</div>`}</div>
+        </div>
+        <div class="facts">
+          ${r.teto ? `<span class="tag">Alvo <b class="num">${reais(r.teto)}</b></span>` : ""}
+          ${r.menor_preco ? `<span class="tag">Menor visto <b class="num">${reais(r.menor_preco)}</b></span>` : ""}
+          ${lvlTag(r.nivel, r.faixa)}
+          ${r.cia ? `<span class="tag">${esc(r.cia)}</span>` : ""}
+        </div>
+        <div class="legend">${h.length ? `<span><i class="sw"></i>Preço</span>` : ""}${r.teto && h.length ? `<span><i class="sw t"></i>Seu alvo</span>` : ""}${r.faixa && h.length ? `<span><i class="sw b"></i>Faixa normal (Google)</span>` : ""}</div>
+        <div class="chart" data-i="${i}"></div>
+        <div class="route-foot"><span>${h.length} checagens${r.proxima ? " · próxima " + dShort(parse(r.proxima)) : ""}</span><a href="${safeUrl(gfl(r))}" target="_blank" rel="noopener">Google Flights ↗</a></div>
+      </article>`;
+    }).join("");
+    box.querySelectorAll(".chart").forEach(el => drawChart(el, rotas[+el.dataset.i]));
+  }
+  function gfl(r) {
+    let q = `Flights from ${r.origem} to ${r.destino} on ${r.ida}`;
+    q += r.volta ? ` through ${r.volta}` : " one way";
+    return "https://www.google.com/travel/flights?hl=pt-BR&curr=BRL&q=" + encodeURIComponent(q);
+  }
+
+  /* ---------- gráfico de linha (SVG) ---------- */
+  function drawChart(el, r) {
+    const pts = (r.historico || []).map(([t, v]) => ({ t: parse(t), v })).filter(x => x.t && x.v);
+    if (pts.length < 2) {
+      el.innerHTML = `<div class="empty">${pts.length ? "O gráfico aparece a partir da 2ª checagem." : "Sem checagens ainda."}</div>`;
+      return;
+    }
+    const W = el.clientWidth || 320, H = el.clientHeight || 150;
+    const m = { l: 52, r: 10, t: 10, b: 22 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const vals = pts.map(p => p.v).concat(r.teto ? [r.teto] : []).concat(r.faixa ? r.faixa : []);
+    let lo = Math.min(...vals), hi = Math.max(...vals);
+    const pad = (hi - lo) * 0.12 || hi * 0.05;
+    lo = Math.max(0, lo - pad); hi = hi + pad;
+    const step = niceStep((hi - lo) / 3);
+    lo = Math.floor(lo / step) * step; hi = Math.ceil(hi / step) * step;
+    const t0 = pts[0].t.getTime(), t1 = pts[pts.length - 1].t.getTime();
+    const x = t => m.l + (t1 === t0 ? iw / 2 : (t - t0) / (t1 - t0) * iw);
+    const y = v => m.t + (1 - (v - lo) / (hi - lo)) * ih;
+    const ticks = []; for (let v = lo; v <= hi + 1e-6; v += step) ticks.push(v);
+    const k = v => v >= 1000 ? "R$ " + (v / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil" : "R$ " + Math.round(v);
+    const path = pts.map((p, i) => (i ? "L" : "M") + x(p.t.getTime()).toFixed(1) + "," + y(p.v).toFixed(1)).join("");
+    const xl = [pts[0], pts[pts.length - 1]];
+    const last = pts[pts.length - 1];
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Histórico de preço ${esc(r.origem)} para ${esc(r.destino)}: ${pts.length} checagens, de ${reais(pts[0].v)} a ${reais(last.v)}">
+      ${r.faixa ? `<rect x="${m.l}" y="${y(r.faixa[1]).toFixed(1)}" width="${iw}" height="${Math.max(0, y(r.faixa[0]) - y(r.faixa[1])).toFixed(1)}" fill="var(--band)" opacity=".7" rx="3"/>` : ""}
+      ${ticks.map(v => `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${m.l - 8}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="var(--muted)" class="num">${k(v)}</text>`).join("")}
+      ${xl.map((p, i) => `<text x="${x(p.t.getTime())}" y="${H - 4}" text-anchor="${i ? "end" : "start"}" font-size="11" fill="var(--muted)">${p.t.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}</text>`).join("")}
+      ${r.teto ? `<line x1="${m.l}" x2="${W - m.r}" y1="${y(r.teto)}" y2="${y(r.teto)}" stroke="var(--target)" stroke-width="1.5" stroke-dasharray="5 4"/>` : ""}
+      <path d="${path}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${x(last.t.getTime())}" cy="${y(last.v)}" r="4" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+      <g class="hov" style="display:none"><line class="hl" y1="${m.t}" y2="${m.t + ih}" stroke="var(--muted)" stroke-width="1"/><circle class="hc" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/></g>
+      <rect x="${m.l}" y="0" width="${iw}" height="${H}" fill="transparent" class="hit"/>
+    </svg><div class="tip"></div>`;
+    const svg = el.querySelector("svg"), hov = svg.querySelector(".hov"), tip = el.querySelector(".tip");
+    const move = ev => {
+      const b = svg.getBoundingClientRect();
+      const px = (ev.clientX - b.left) * (W / b.width);
+      let best = pts[0], bd = Infinity;
+      for (const p of pts) { const dd = Math.abs(x(p.t.getTime()) - px); if (dd < bd) { bd = dd; best = p; } }
+      const cx = x(best.t.getTime()), cy = y(best.v);
+      hov.style.display = "";
+      hov.querySelector(".hl").setAttribute("x1", cx); hov.querySelector(".hl").setAttribute("x2", cx);
+      hov.querySelector(".hc").setAttribute("cx", cx); hov.querySelector(".hc").setAttribute("cy", cy);
+      tip.innerHTML = `<b class="num">${reais(best.v)}</b><br>${dShort(best.t)}`;
+      tip.style.left = Math.min(Math.max(cx * b.width / W, 50), b.width - 50) + "px";
+      tip.style.top = (cy * b.height / H - 10) + "px";
+      tip.style.opacity = 1;
+    };
+    const out = () => { hov.style.display = "none"; tip.style.opacity = 0; };
+    const hit = svg.querySelector(".hit");
+    hit.addEventListener("pointermove", move); hit.addEventListener("pointerdown", move); hit.addEventListener("pointerleave", out);
+  }
+  function niceStep(raw) {
+    const p = Math.pow(10, Math.floor(Math.log10(raw || 1)));
+    const n = raw / p;
+    return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p;
+  }
+  let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => DATA && renderRoutes(), 150); });
+
+  /* ---------- milhas ---------- */
+  function renderMiles() {
+    const rm = DATA.rotas_milhas || [];
+    const sec = $("#sec-milhas");
+    if (!rm.length) { sec.hidden = true; return; }
+    sec.hidden = false;
+    const prog = { smiles: "Smiles", azul: "Azul Fidelidade" };
+    $("#miles").innerHTML = rm.map(r => {
+      const of = r.ofertas || [];
+      return `<article class="card miles">
+        <div class="route-top"><div><div class="iata">${esc(r.origem)} ${ICON.arrow} ${esc(r.destino)}</div>
+          <div class="cities">${esc(nome(r.origem))} → ${esc(nome(r.destino))}</div>
+          <div class="dates">${esc(dBR(r.inicio))} a ${esc(dBR(r.fim))} · até ${milhas(r.milhas_max)} milhas</div></div>
+          <div class="price">${r.menor ? `<div class="now num">${milhas(r.menor)}</div><div class="delta flat">menor visto (milhas)</div>` : `<div class="delta flat">${DATA.painel && DATA.painel.seats_ligada ? "nada abaixo do limite" : "Seats.aero não configurado"}</div>`}</div></div>
+        ${of.length ? `<table><thead><tr><th>Data</th><th>Programa</th><th>Cabine</th><th class="r">Milhas</th></tr></thead><tbody>
+          ${of.slice(0, 6).map(o => `<tr><td>${esc(dBR(o.data))}</td><td>${esc(prog[o.programa] || o.programa)}</td><td>${esc(o.cabine)}${o.direto ? " · direto" : ""}</td><td class="r num"><b>${milhas(o.milhas)}</b></td></tr>`).join("")}
+        </tbody></table>` : ""}
+      </article>`;
+    }).join("");
+  }
+
+  /* ---------- promoções ---------- */
+  function renderPromos() {
+    app.querySelectorAll("[data-modo]").forEach(b => b.setAttribute("aria-pressed", b.dataset.modo === UI.modo));
+    app.querySelectorAll("[data-tipo]").forEach(b => b.setAttribute("aria-pressed", b.dataset.tipo === UI.tipo));
+    const q = UI.q.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    let list = (DATA.painel && DATA.painel.promocoes) || [];
+    if (UI.modo === "meus") list = list.filter(p => p.bate);
+    if (UI.tipo === "milhas") list = list.filter(p => p.eh_milhas && p.tipo !== "bonus");
+    else if (UI.tipo === "bonus") list = list.filter(p => p.tipo === "bonus");
+    else if (UI.tipo !== "tudo") list = list.filter(p => p.tipo === UI.tipo);
+    if (q) list = list.filter(p => (p.titulo + " " + p.fonte).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").includes(q));
+    list = list.slice().sort((a, b) => (parse(b.publicado) || 0) - (parse(a.publicado) || 0));
+    $("#pcount").textContent = `${list.length} ${list.length === 1 ? "promoção" : "promoções"}`;
+    const box = $("#promos");
+    if (!list.length) {
+      box.innerHTML = `<div class="none">${UI.modo === "meus" ? "Nenhuma promoção recente bate com seus filtros. Veja <b>Todas</b> ou ajuste os filtros no Telegram." : "Nenhuma promoção encontrada."}</div>`;
+      return;
+    }
+    const lab = { internacional: "INT", nacional: "BR", bonus: "PTS", indefinido: "✈" };
+    box.innerHTML = list.slice(0, UI.limite).map(p => {
+      const val = p.preco ? `<div class="v num">${reais(p.preco)}</div><div class="u">a partir de</div>`
+        : p.milhas ? `<div class="v num">${milhas(p.milhas)}</div><div class="u">milhas/pontos</div>` : "";
+      const tipoTxt = p.tipo === "bonus" ? "Bônus de pontos" : p.eh_milhas ? "Milhas" : p.tipo === "internacional" ? "Internacional" : p.tipo === "nacional" ? "Nacional" : "Geral";
+      return `<div class="promo">
+        <div class="ptype ${p.tipo}" aria-hidden="true">${p.eh_milhas && p.tipo !== "bonus" ? "MI" : lab[p.tipo] || "✈"}</div>
+        <div><a class="ptitle" href="${esc(safeUrl(p.link))}" target="_blank" rel="noopener">${esc(p.titulo)}</a>
+          <div class="pmeta"><span>${esc(p.fonte)}</span><span>·</span><span>${esc(rel(parse(p.publicado)))}</span><span>·</span><span>${tipoTxt}</span>${p.bate && UI.modo === "todas" ? `<span class="match">✓ seus filtros</span>` : ""}</div></div>
+        <div class="pval">${val}</div>
+      </div>`;
+    }).join("") + (list.length > UI.limite ? `<div class="more"><button class="btn" id="more">Mostrar mais ${Math.min(25, list.length - UI.limite)}</button></div>` : "");
+    const mb = $("#more"); if (mb) mb.onclick = () => { UI.limite += 25; renderPromos(); };
+  }
+
+  /* ---------- alertas ---------- */
+  function renderAlerts() {
+    const a = (DATA.alertas || []).slice().reverse();
+    const box = $("#alerts");
+    if (!a.length) { box.innerHTML = `<div class="none">Nenhum alerta enviado ainda. Eles aparecem aqui assim que o robô te avisar de algo.</div>`; return; }
+    const ic = { promocao: ICON.bell, rota: ICON.plane, milhas: ICON.ticket };
+    box.innerHTML = a.slice(0, 40).map(x => `<div class="ev">
+      <div class="evi">${ic[x.tipo] || ICON.bell}</div>
+      <div><div class="t">${x.link ? `<a href="${esc(safeUrl(x.link))}" target="_blank" rel="noopener">${esc(x.titulo)}</a>` : esc(x.titulo)}</div>
+      <div class="m">${x.valor ? `<b class="num" style="color:var(--text)">${esc(x.valor)}</b> · ` : ""}${esc(rel(parse(x.quando)))}</div></div>
+    </div>`).join("");
+  }
+
+  /* ---------- configurações ---------- */
+  function renderCfg() {
+    const c = DATA.config || {};
+    const chips = (arr, vazio) => arr && arr.length ? arr.map(v => `<span class="tag">${esc(nome(v))}${nome(v) !== v ? ` <span style="color:var(--muted)">${esc(v)}</span>` : ""}</span>`).join("") : `<span class="tag">${vazio}</span>`;
+    const yn = v => `<span class="tag">${v ? "sim" : "não"}</span>`;
+    $("#cfg").innerHTML = `<dl>
+      <dt>Origens</dt><dd>${chips(c.origens, "qualquer")}</dd>
+      <dt>Destinos</dt><dd>${chips(c.destinos, "qualquer")}</dd>
+      <dt>Tipo</dt><dd><span class="tag">${esc(c.tipo || "ambos")}</span></dd>
+      <dt>Preço máx.</dt><dd><span class="tag num">${c.preco_max ? reais(c.preco_max) : "sem limite"}</span></dd>
+      <dt>Milhas máx.</dt><dd><span class="tag num">${c.milhas_max ? milhas(c.milhas_max) : "sem limite"}</span></dd>
+      <dt>Promo. em milhas</dt><dd>${yn(c.milhas)}</dd>
+      <dt>Bônus de pontos</dt><dd>${yn(c.bonus)}</dd>
+      <dt>Checar rotas</dt><dd><span class="tag">a cada ${c.intervalo_horas || 12} h</span></dd>
+    </dl>
+    <div class="how">Para mudar, mande um comando ao bot no Telegram (toque para copiar):
+      <div class="cmds">${["/destinos Europa, Orlando", "/tipo internacional", "/precomax 2000", "/milhasmax 40000", "/rota FOR LIS 10/03/2027 25/03/2027 3500", "/ajuda"].map(t => `<code data-copy="${esc(t)}">${esc(t)}</code>`).join("")}</div></div>`;
+    $("#cfg").querySelectorAll("[data-copy]").forEach(el => el.onclick = async () => {
+      try { await navigator.clipboard.writeText(el.dataset.copy); toast("Copiado: " + el.dataset.copy); } catch (e) { toast("Não deu para copiar"); }
+    });
+  }
+
+  function renderSources() {
+    const f = (DATA.painel && DATA.painel.fontes) || {};
+    $("#sources").innerHTML = Object.entries(f).map(([k, v]) => `<span class="src"><span class="dot ${v}"></span>${esc(k)}${v === "erro" ? " (fora do ar)" : ""}</span>`).join("");
+  }
+
+  load();
+  setInterval(() => { if (!document.hidden) load(); }, 5 * 60 * 1000);
+})();
+</script>
+</body>
+</html>
