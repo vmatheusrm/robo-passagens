@@ -1,0 +1,23 @@
+{
+ "id": "mw32agwb",
+ "criado": "2026-11-05T04:44:51.083Z",
+ "config": {
+  "origens": [
+   "FOR"
+  ],
+  "destinos": [
+   "BEL"
+  ],
+  "tipo": "nacional",
+  "milhas": true,
+  "bonus": false,
+  "preco_max": 450,
+  "milhas_max": 20000,
+  "intervalo_horas": 6,
+  "pausado": false
+ },
+ "add_rotas": [],
+ "add_rotas_milhas": [],
+ "remover_rotas": [],
+ "checar": true
+}
