@@ -307,19 +307,11 @@
   "https://www.melhoresdestinos.com.br/?post_type=promocao&p=646752",
   "https://www.melhoresdestinos.com.br/?p=646786",
   "https://www.melhoresdestinos.com.br/?post_type=promocao&p=646809",
-  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=646825"
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=646825",
+  "https://pontospravoar.com/?p=149292"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://passageirodeprimeira.com/?p=580347",
-   "titulo": "Cartão LATAM Pass Itaú: 40 mil milhas na adesão e até 35% de bônus nas transferências de pontos",
-   "link": "https://passageirodeprimeira.com/cartao-latam-pass-itau-40-mil-milhas-na-adesao-e-ate-35-de-bonus-nas-transferencias-de-pontos/",
-   "texto": "Você sabia que solicitando os cartões LATAM Pass Black e Platinum e assinando o Clube LATAM Pass você pode garantir até 35% de bônus nas transferências de pontos de qualquer parceiro sem precisar aguardar futuras campanhas? O post Cartão LATAM Pass Itaú: 40 mil milhas na adesão e até 35% de bônus nas transferências de pontos apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Sat, 07 Nov 2026 16:06:45 +0000",
-   "lido_em": "2026-11-07T15:51-03:00"
-  },
   {
    "id": "https://passageirodeprimeira.com/?p=580001",
    "titulo": "Segue valendo! Ganhe até 55 mil milhas bônus solicitando o cartão GOL Smiles",
@@ -1390,6 +1382,15 @@
    "fonte": "Melhores Destinos",
    "data": "Tue, 10 Nov 2026 22:26:30 +0000",
    "lido_em": "2026-11-10T22:30-03:00"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=149292",
+   "titulo": "Black Friday do ALL Accor! Transfira pontos do Azul Fidelidade com desconto e até 30% de bônus",
+   "link": "https://pontospravoar.com/black-friday-all-accor-transfira-pontos-azul-fidelidade-desconto-ate-30-porcento-bonus/",
+   "texto": "O ALL Accor acaba de liberar sua oferta de Black Friday em parceria com o Azul Fidelidade, em que oferece aos associados até 30% de bônus na transferência de pontos. Além disso, clientes elegíveis do programa da Azul contam com paridade especial. Aproveite, pois essa oferta possui estoque limitado de 3.000 resgates. Promoção ALL Accor…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 11 Nov 2026 03:14:07 +0000",
+   "lido_em": "2026-11-11T05:20-03:00"
   }
  ],
  "rotas": [],
@@ -1409,9 +1410,20 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-10T22:30-03:00",
+  "atualizado": "2026-11-11T05:20-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Black Friday do ALL Accor! Transfira pontos do Azul Fidelidade com desconto e até 30% de bônus",
+    "link": "https://pontospravoar.com/black-friday-all-accor-transfira-pontos-azul-fidelidade-desconto-ate-30-porcento-bonus/",
+    "fonte": "Pontos pra Voar",
+    "tipo": "indefinido",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": true,
+    "bate": false,
+    "publicado": "2026-11-11T00:14-03:00"
+   },
    {
     "titulo": "Esquenta Latam Friday! Voos nacionais com até 40% de desconto, a partir de R$ X ida e volta!",
     "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-nacionais-10-11-26",
@@ -2511,17 +2523,6 @@
     "eh_milhas": true,
     "bate": false,
     "publicado": "2026-11-07T15:20-03:00"
-   },
-   {
-    "titulo": "Cartão LATAM Pass Itaú: 40 mil milhas na adesão e até 35% de bônus nas transferências de pontos",
-    "link": "https://passageirodeprimeira.com/cartao-latam-pass-itau-40-mil-milhas-na-adesao-e-ate-35-de-bonus-nas-transferencias-de-pontos/",
-    "fonte": "Passageiro de Primeira",
-    "tipo": "indefinido",
-    "preco": null,
-    "milhas": 40000.0,
-    "eh_milhas": true,
-    "bate": false,
-    "publicado": "2026-11-07T13:06-03:00"
    }
   ],
   "fontes": {
