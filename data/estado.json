@@ -363,19 +363,11 @@
   "https://passageirodeprimeira.com/?p=581502",
   "https://passageirodeprimeira.com/?p=463973",
   "https://passageirodeprimeira.com/?p=313953",
-  "https://passageirodeprimeira.com/?p=329572"
+  "https://passageirodeprimeira.com/?p=329572",
+  "https://pontospravoar.com/?p=149316"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://pontospravoar.com/?p=149054",
-   "titulo": "Alerta PPV! Passagens pelo Brasil a partir de 5 mil pontos Azul Fidelidade + taxas",
-   "link": "https://pontospravoar.com/alerta-ppv-passagens-brasil-5-mil-pontos-azul-fidelidade-taxas/",
-   "texto": "Na última edição do alerta de passagens PPV desta segunda-feira, nossa equipe reuniu sugestões de passagens pelo Brasil para voar nos próximos meses, gastando a partir de 5.000 pontos + taxas. Confira as disponibilidades a seguir. Passagens nacionais com pontos Azul Fidelidade Confira na tabela a seguir trechos nacionais. Para pesquisar outros destinos, acesse esta…",
-   "fonte": "Pontos pra Voar",
-   "data": "Mon, 09 Nov 2026 22:00:49 +0000",
-   "lido_em": "2026-11-09T21:28-03:00"
-  },
   {
    "id": "https://pontospravoar.com/?p=148891",
    "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 9 de novembro de 2026",
@@ -1446,6 +1438,15 @@
    "fonte": "Passageiro de Primeira",
    "data": "Wed, 11 Nov 2026 22:40:08 +0000",
    "lido_em": "2026-11-11T20:07-03:00"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=149316",
+   "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 11 de novembro de 2026",
+   "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-11-novembro-2026/",
+   "texto": "Chegou o Radar PPV de 11.11! Nesta quarta-feira, reunimos as principais promoções encontradas no universo de pontos, milhas e viagens, com oportunidades para quem busca economizar e aproveitar melhor seus benefícios. Confira nossa seleção! Promoções de acúmulo de pontos ¹ pontos por dólar. Promoções de transferência de pontos Compra de pontos com desconto Compra de…",
+   "fonte": "Pontos pra Voar",
+   "data": "Wed, 11 Nov 2026 23:00:07 +0000",
+   "lido_em": "2026-11-12T00:53-03:00"
   }
  ],
  "rotas": [],
@@ -1465,9 +1466,20 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-11T20:07-03:00",
+  "atualizado": "2026-11-12T00:53-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 11 de novembro de 2026",
+    "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-11-novembro-2026/",
+    "fonte": "Pontos pra Voar",
+    "tipo": "bonus",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": true,
+    "bate": false,
+    "publicado": "2026-11-11T20:00-03:00"
+   },
    {
     "titulo": "Como acumular milhas no KrisFlyer da Singapore Airlines",
     "link": "https://passageirodeprimeira.com/como-acumular-milhas-no-krisflyer-da-singapore-airlines/",
@@ -2589,17 +2601,6 @@
     "eh_milhas": true,
     "bate": false,
     "publicado": "2026-11-09T20:00-03:00"
-   },
-   {
-    "titulo": "Alerta PPV! Passagens pelo Brasil a partir de 5 mil pontos Azul Fidelidade + taxas",
-    "link": "https://pontospravoar.com/alerta-ppv-passagens-brasil-5-mil-pontos-azul-fidelidade-taxas/",
-    "fonte": "Pontos pra Voar",
-    "tipo": "indefinido",
-    "preco": null,
-    "milhas": 5000.0,
-    "eh_milhas": true,
-    "bate": false,
-    "publicado": "2026-11-09T19:00-03:00"
    }
   ],
   "fontes": {
