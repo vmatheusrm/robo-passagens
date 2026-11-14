@@ -456,19 +456,11 @@
   "https://passageirodeprimeira.com/?p=581408",
   "https://passageirodeprimeira.com/?p=582142",
   "https://passageirodeprimeira.com/?p=464733",
-  "https://passageirodeprimeira.com/?p=571888"
+  "https://passageirodeprimeira.com/?p=571888",
+  "https://pontospravoar.com/?p=149820"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=646868",
-   "titulo": "Somente hoje! Hotéis com descontos especiais mais cupom de até R$ 1.100 OFF e pagamento em até 11x sem juros",
-   "link": "https://www.melhoresdestinos.com.br/promocao/11-11-hoteis-com-descontos-zarpo-11nov26",
-   "texto": "O 11/11 chegou com vantagens imperdíveis para quem quer garantir a próxima viagem com desconto! A Zarpo selecionou 11 hotéis com ofertas especiais de Black Friday para você curtir dias de muita diversão ou relaxamento com a família no Brasil ou no exterior. São hospedagens com muito conforto, boa avaliação e ótima localização em diversos…",
-   "fonte": "Melhores Destinos",
-   "data": "Wed, 11 Nov 2026 12:28:31 +0000",
-   "lido_em": "2026-11-11T13:32-03:00"
-  },
   {
    "id": "https://pontospravoar.com/?p=149189",
    "titulo": "Qatar Airways inclui voos de média distância em serviço de escolha de refeições",
@@ -1539,6 +1531,15 @@
    "fonte": "Passageiro de Primeira",
    "data": "Fri, 13 Nov 2026 22:10:53 +0000",
    "lido_em": "2026-11-13T19:15-03:00"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=149820",
+   "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 13 de novembro de 2026",
+   "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-13-novembro-2026/",
+   "texto": "Sextou! E, antes de começar o fim de semana, vale conferir as oportunidades selecionadas pela nossa equipe no Radar PPV. Reunimos promoções de pontos, milhas e viagens que podem ajudar você a economizar. Confira! Promoções de acúmulo de pontos ¹ pontos por dólar. Promoções de transferência de pontos Compra de pontos com desconto Compra de…",
+   "fonte": "Pontos pra Voar",
+   "data": "Fri, 13 Nov 2026 23:00:43 +0000",
+   "lido_em": "2026-11-13T23:31-03:00"
   }
  ],
  "rotas": [],
@@ -1558,9 +1559,20 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-13T19:15-03:00",
+  "atualizado": "2026-11-13T23:31-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 13 de novembro de 2026",
+    "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-13-novembro-2026/",
+    "fonte": "Pontos pra Voar",
+    "tipo": "bonus",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": true,
+    "bate": false,
+    "publicado": "2026-11-13T20:00-03:00"
+   },
    {
     "titulo": "Aproveite os próximos feriados estacionando com 10% de desconto com a Estapar",
     "link": "https://passageirodeprimeira.com/aproveite-os-proximos-feriados-estacionando-com-10-de-desconto-com-a-estapar/",
