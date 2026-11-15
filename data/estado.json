@@ -477,28 +477,12 @@
   "https://passageirodeprimeira.com/?p=581084",
   "https://passageirodeprimeira.com/?p=580972",
   "https://passageirodeprimeira.com/?p=580876",
-  "https://passageirodeprimeira.com/?p=580923"
+  "https://passageirodeprimeira.com/?p=580923",
+  "https://pontospravoar.com/?p=84389",
+  "https://passageirodeprimeira.com/?p=580951"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://passageirodeprimeira.com/?p=581364",
-   "titulo": "Programa de fidelidade da Alaska Airlines inclui GOL entre parceiras",
-   "link": "https://passageirodeprimeira.com/atmos-rewards-inclui-gol-entre-parceiras-e-amplia-opcoes-de-viagens-para-a-america-do-sul/",
-   "texto": "A Alaska Airlines anunciou uma parceria com a GOL, permitindo que passageiros acumulem pontos do Atmos Rewards ao reservar voos da companhia brasileira. A partir de 28 de março de 2027, será possível voar até o Rio de Janeiro e conectar com mais de 35 cidades na América do Sul. Além disso, a parceria com a American Airlines será ampliada, oferecendo novas opções de conexão e acúmulo de pontos. O post Programa de fidelidade da Alaska Airlines inclui GOL entre parceiras apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Wed, 11 Nov 2026 20:30:38 +0000",
-   "lido_em": "2026-11-11T20:07-03:00"
-  },
-  {
-   "id": "https://passageirodeprimeira.com/?p=581136",
-   "titulo": "Accor e Hard Rock anunciam parceria global para expandir hotéis e benefícios de fidelidade",
-   "link": "https://passageirodeprimeira.com/accor-e-hard-rock-anunciam-parceria-global-para-expandir-hoteis-e-beneficios-de-fidelidade/",
-   "texto": "A Accor e a Hard Rock International anunciaram uma parceria global que permitirá a integração de hotéis da marca Hard Rock ao programa de fidelidade ALL Accor. Com isso, os hóspedes poderão aproveitar benefícios recíprocos, como conversão de pontos e status match. O Hard Rock Hotel New York já está oferecendo vantagens dessa colaboração. O post Accor e Hard Rock anunciam parceria global para expandir hotéis e benefícios de fidelidade apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Wed, 11 Nov 2026 21:00:07 +0000",
-   "lido_em": "2026-11-11T20:07-03:00"
-  },
   {
    "id": "https://passageirodeprimeira.com/?p=581502",
    "titulo": "Até 23h59: Azul Fidelidade oferece até 120% de bônus na transferência de pontos do BRB",
@@ -1560,6 +1544,24 @@
    "fonte": "Passageiro de Primeira",
    "data": "Sat, 14 Nov 2026 20:00:36 +0000",
    "lido_em": "2026-11-14T17:39-03:00"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=84389",
+   "titulo": "Confira alguns passeios de trem que estão entre os mais bonitos do mundo",
+   "link": "https://pontospravoar.com/confira-passeios-trem-estao-entre-mais-lindos-mundo/",
+   "texto": "É de conhecimento geral que diversos países possuem transportes de trem supereficientes tornando as viagens mais aconchegantes, fáceis, bonitas e econômicas. Mas algumas dessas rotas são realmente de tirar o fôlego, com paisagens exuberantes que deixam qualquer um de queixo caído. Vamos conhecer alguns dos passeios de trem mais bonitos do mundo? Passeios de trem…",
+   "fonte": "Pontos pra Voar",
+   "data": "Sat, 14 Nov 2026 21:00:58 +0000",
+   "lido_em": "2026-11-14T21:23-03:00"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=580951",
+   "titulo": "Qatar Airways amplia pré-seleção de refeições para Primeira Classe e Executiva",
+   "link": "https://passageirodeprimeira.com/qatar-airways-amplia-pre-selecao-de-refeicoes-para-primeira-classe-e-executiva/",
+   "texto": "A Qatar Airways anunciou a expansão do seu serviço de pré-seleção de refeições (Pre-Order Meal Service) para voos de média distância. Agora, passageiros viajando em Primeira Classe ou Classe Executiva em rotas com duração a partir de 2 horas já podem escolher suas refeições principais antes do embarque. O post Qatar Airways amplia pré-seleção de refeições para Primeira Classe e Executiva apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Sat, 14 Nov 2026 21:00:04 +0000",
+   "lido_em": "2026-11-14T21:23-03:00"
   }
  ],
  "rotas": [],
@@ -1579,9 +1581,20 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-14T17:39-03:00",
+  "atualizado": "2026-11-14T21:23-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Qatar Airways amplia pré-seleção de refeições para Primeira Classe e Executiva",
+    "link": "https://passageirodeprimeira.com/qatar-airways-amplia-pre-selecao-de-refeicoes-para-primeira-classe-e-executiva/",
+    "fonte": "Passageiro de Primeira",
+    "tipo": "indefinido",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": false,
+    "bate": false,
+    "publicado": "2026-11-14T18:00-03:00"
+   },
    {
     "titulo": "American Airlines volta a oferecer o Flagship Dining no Aeroporto de Los Angeles",
     "link": "https://passageirodeprimeira.com/american-airlines-volta-oferecer-flagship-dining-aeroporto-los-angeles/",
@@ -2659,17 +2672,6 @@
     "eh_milhas": true,
     "bate": false,
     "publicado": "2026-11-11T18:20-03:00"
-   },
-   {
-    "titulo": "Programa de fidelidade da Alaska Airlines inclui GOL entre parceiras",
-    "link": "https://passageirodeprimeira.com/atmos-rewards-inclui-gol-entre-parceiras-e-amplia-opcoes-de-viagens-para-a-america-do-sul/",
-    "fonte": "Passageiro de Primeira",
-    "tipo": "nacional",
-    "preco": null,
-    "milhas": null,
-    "eh_milhas": false,
-    "bate": false,
-    "publicado": "2026-11-11T17:30-03:00"
    }
   ],
   "fontes": {
