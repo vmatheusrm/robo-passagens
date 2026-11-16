@@ -497,37 +497,13 @@
   "https://passageirodeprimeira.com/?p=581751",
   "https://passageirodeprimeira.com/?p=581480",
   "https://passageirodeprimeira.com/?p=581022",
-  "https://passageirodeprimeira.com/?p=581117"
+  "https://passageirodeprimeira.com/?p=581117",
+  "https://pontospravoar.com/?p=150128",
+  "https://passageirodeprimeira.com/?p=581421",
+  "https://passageirodeprimeira.com/?p=581795"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://pontospravoar.com/?p=149489",
-   "titulo": "Azul transforma voos entre Corumbá e Campinas em operação regular",
-   "link": "https://pontospravoar.com/azul-transforma-voos-entre-corumba-e-campinas-em-operacao-regular/",
-   "texto": "A Azul vai manter durante todo o ano os voos entre Corumbá (MS) e Campinas (SP), que deixam de operar apenas em períodos sazonais. A ligação com o Aeroporto de Viracopos oferece acesso à malha nacional e internacional da companhia e facilita a chegada de turistas ao Pantanal. Rota terá três voos semanais em cada…",
-   "fonte": "Pontos pra Voar",
-   "data": "Thu, 12 Nov 2026 16:30:31 +0000",
-   "lido_em": "2026-11-12T17:29-03:00"
-  },
-  {
-   "id": "https://pontospravoar.com/?p=149662",
-   "titulo": "Esfera: aproveite até 24 pontos por real em diferentes lojas parceiras",
-   "link": "https://pontospravoar.com/esfera-aproveite-ate-24-pontos-real-diferentes-lojas-parceiras/",
-   "texto": "A Esfera traz novas oportunidades para quem quer aproveitar as compras e acumular mais pontos! São ofertas em mais de 20 lojas parceiras, com possibilidade de garantir até 24 pontos por real gasto. Confira os destaques da campanha e aproveite as condições disponíveis. Promoções Esfera Confira na tabela abaixo as promoções em destaque na Esfera:…",
-   "fonte": "Pontos pra Voar",
-   "data": "Thu, 12 Nov 2026 17:00:31 +0000",
-   "lido_em": "2026-11-12T17:29-03:00"
-  },
-  {
-   "id": "https://pontospravoar.com/?p=149702",
-   "titulo": "Azul Friday! Aproveite até 10% de desconto em passagens no Azul pelo Mundo",
-   "link": "https://pontospravoar.com/azul-friday-aproveite-ate-10-porcento-desconto-passagens-azul-pelo-mundo/",
-   "texto": "Aproveite! Até as 4h de amanhã, dia 13 de novembro, a Azul está oferecendo até 10% de desconto no resgate de passagens no Azul pelo Mundo, plataforma da Azul para resgate de passagens com parceiros. A seguir, veja os principais detalhes e não deixe para a última hora. Azul pelo Mundo No Azul pelo Mundo,…",
-   "fonte": "Pontos pra Voar",
-   "data": "Thu, 12 Nov 2026 17:39:44 +0000",
-   "lido_em": "2026-11-12T17:29-03:00"
-  },
   {
    "id": "https://pontospravoar.com/?p=149684",
    "titulo": "GOL aumenta em 15% a oferta de voos para o verão 2026/2027",
@@ -1580,6 +1556,33 @@
    "fonte": "Passageiro de Primeira",
    "data": "Sun, 15 Nov 2026 20:03:28 +0000",
    "lido_em": "2026-11-15T17:18-03:00"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=150128",
+   "titulo": "Haja coração! Semana do Milheiro – 09 a 15 de novembro",
+   "link": "https://pontospravoar.com/haja-coracao-semana-milheiro-09-a-15-novembro/",
+   "texto": "É com esse gosto de guarda-chuva na boca por termos um feriado caindo no final de semana que chegamos mais uma vez para uma nova edição da Semana do Milheiro, agora já quase no final da disputa. Dessa vez tivemos notícias pouco usuais, se é que podemos dizer isso de alguma maneira. Será que vamos…",
+   "fonte": "Pontos pra Voar",
+   "data": "Sun, 15 Nov 2026 21:00:09 +0000",
+   "lido_em": "2026-11-15T21:18-03:00"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=581421",
+   "titulo": "American Airlines adiciona refeições leves no menu da Primeira Classe",
+   "link": "https://passageirodeprimeira.com/american-airlines-adiciona-refeicoes-leves-menu-primeira-classe/",
+   "texto": "A American Airlines está ampliando as opções gastronômicas dos seus clientes premium com novas refeições leves oferecidas na Primeira Classe nos voos entre o Aeroporto Internacional O'Hare de Chicago (ORD) com destino a John F. Kennedy (JFK) ou LaGuardia (LGA), em Nova York. O post American Airlines adiciona refeições leves no menu da Primeira Classe apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Sun, 15 Nov 2026 21:04:13 +0000",
+   "lido_em": "2026-11-15T21:18-03:00"
+  },
+  {
+   "id": "https://passageirodeprimeira.com/?p=581795",
+   "titulo": "Groelândia inaugura novo aeroporto internacional em Ilulissat",
+   "link": "https://passageirodeprimeira.com/groelandia-inaugura-novo-aeroporto-internacional-ilulissat/",
+   "texto": "A Groelândia inaugurou, em 29 de outubro de 2026, um novo aeroporto internacional em Ilulissat, criando uma nova porta de entrada para o norte do país. A estrutura amplia a conectividade da região e facilita o acesso de viajantes às paisagens árticas e aos destinos da Baia de Disko. O post Groelândia inaugura novo aeroporto internacional em Ilulissat apareceu primeiro em Passageiro de Primeira .",
+   "fonte": "Passageiro de Primeira",
+   "data": "Sun, 15 Nov 2026 22:04:41 +0000",
+   "lido_em": "2026-11-15T21:18-03:00"
   }
  ],
  "rotas": [],
@@ -1599,9 +1602,31 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-15T17:18-03:00",
+  "atualizado": "2026-11-15T21:18-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Groelândia inaugura novo aeroporto internacional em Ilulissat",
+    "link": "https://passageirodeprimeira.com/groelandia-inaugura-novo-aeroporto-internacional-ilulissat/",
+    "fonte": "Passageiro de Primeira",
+    "tipo": "internacional",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": false,
+    "bate": false,
+    "publicado": "2026-11-15T19:04-03:00"
+   },
+   {
+    "titulo": "American Airlines adiciona refeições leves no menu da Primeira Classe",
+    "link": "https://passageirodeprimeira.com/american-airlines-adiciona-refeicoes-leves-menu-primeira-classe/",
+    "fonte": "Passageiro de Primeira",
+    "tipo": "internacional",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": false,
+    "bate": false,
+    "publicado": "2026-11-15T18:04-03:00"
+   },
    {
     "titulo": "Brussels Airlines realiza primeiro voo com Starlink no Airbus A320neo",
     "link": "https://passageirodeprimeira.com/brussels-airlines-realiza-primeiro-voo-starlink-airbus-a320neo/",
@@ -2646,39 +2671,6 @@
     "eh_milhas": false,
     "bate": false,
     "publicado": "2026-11-12T15:00-03:00"
-   },
-   {
-    "titulo": "Azul Friday! Aproveite até 10% de desconto em passagens no Azul pelo Mundo",
-    "link": "https://pontospravoar.com/azul-friday-aproveite-ate-10-porcento-desconto-passagens-azul-pelo-mundo/",
-    "fonte": "Pontos pra Voar",
-    "tipo": "indefinido",
-    "preco": null,
-    "milhas": null,
-    "eh_milhas": false,
-    "bate": false,
-    "publicado": "2026-11-12T14:39-03:00"
-   },
-   {
-    "titulo": "Esfera: aproveite até 24 pontos por real em diferentes lojas parceiras",
-    "link": "https://pontospravoar.com/esfera-aproveite-ate-24-pontos-real-diferentes-lojas-parceiras/",
-    "fonte": "Pontos pra Voar",
-    "tipo": "bonus",
-    "preco": null,
-    "milhas": null,
-    "eh_milhas": true,
-    "bate": false,
-    "publicado": "2026-11-12T14:00-03:00"
-   },
-   {
-    "titulo": "Azul transforma voos entre Corumbá e Campinas em operação regular",
-    "link": "https://pontospravoar.com/azul-transforma-voos-entre-corumba-e-campinas-em-operacao-regular/",
-    "fonte": "Pontos pra Voar",
-    "tipo": "internacional",
-    "preco": null,
-    "milhas": null,
-    "eh_milhas": false,
-    "bate": false,
-    "publicado": "2026-11-12T13:30-03:00"
    }
   ],
   "fontes": {
