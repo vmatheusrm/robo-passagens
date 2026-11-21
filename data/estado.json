@@ -699,37 +699,13 @@
   "https://passageirodeprimeira.com/?p=582196",
   "https://passageirodeprimeira.com/?p=333369",
   "https://passageirodeprimeira.com/?p=582722",
-  "https://passageirodeprimeira.com/?p=582685"
+  "https://passageirodeprimeira.com/?p=582685",
+  "https://www.melhoresdestinos.com.br/?p=648516",
+  "https://www.melhoresdestinos.com.br/?p=648390",
+  "https://www.melhoresdestinos.com.br/?post_type=promocao&p=648700"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://passageirodeprimeira.com/?p=582697",
-   "titulo": "Parceria entre Livelo e Avenue oferece até 10 mil pontos para novos clientes",
-   "link": "https://passageirodeprimeira.com/parceria-entre-livelo-avenue-oferece-ate-10-mil-pontos-novos-clientes/",
-   "texto": "A Livelo anunciou, na segunda-feira (16), uma campanha exclusiva com a Avenue, empresa do grupo Itaú e pioneira em investimentos nos EUA para brasileiros. Até domingo (22), os clientes que abrirem uma conta na Avenue e realizarem câmbio para a conta de investimentos a partir de US$ 1 mil poderão ganhar até 10 mil pontos Livelo, que podem ser trocados por viagens, produtos e até dinheiro na conta. O post Parceria entre Livelo e Avenue oferece até 10 mil pontos para novos clientes apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Tue, 17 Nov 2026 21:30:21 +0000",
-   "lido_em": "2026-11-17T22:21-03:00"
-  },
-  {
-   "id": "https://passageirodeprimeira.com/?p=582543",
-   "titulo": "Últimas horas para garantir 10% OFF na sua próxima reserva com o nosso cupom exclusivo da Hoteis.com",
-   "link": "https://passageirodeprimeira.com/ultimas-horas-garantir-10-off-proxima-reserva-cupom-exclusivo-hoteis-com/",
-   "texto": "Últimas horas para usar o nosso cupom na Hoteis.com e garantir sua próxima hospedagem com desconto exclusivo! Utilizando o cupom ‘PPHOTEIS10‘ [sem aspas] através deste link, você vai receber 10% de desconto em suas reservas. Além disso, é possível parcelar sua estadia em até 12x sem juros, inclusive as internacionais. A oferta é válida somente hoje (17) para hospedagens até o dia 31 de março de 2027. O post Últimas horas para garantir 10% OFF na sua próxima reserva com o nosso cupom exclusivo da Hoteis.com apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Tue, 17 Nov 2026 22:40:21 +0000",
-   "lido_em": "2026-11-17T22:21-03:00"
-  },
-  {
-   "id": "https://passageirodeprimeira.com/?p=420975",
-   "titulo": "Como emitir o Seguro Viagem do cartão Mastercard",
-   "link": "https://passageirodeprimeira.com/seguro-viagem-mastercard/",
-   "texto": "Quer garantir tranquilidade na sua próxima viagem? Nesta matéria, mostramos como emitir gratuitamente o Seguro Viagem do seu cartão Mastercard, disponível para as categorias Platinum e Black. Siga nosso passo a passo e viaje protegido! O post Como emitir o Seguro Viagem do cartão Mastercard apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Tue, 17 Nov 2026 23:00:47 +0000",
-   "lido_em": "2026-11-17T22:21-03:00"
-  },
   {
    "id": "https://pontospravoar.com/?p=150456",
    "titulo": "Livelo oferece 9 mil pontos na assinatura anual do Clube Mini",
@@ -1782,6 +1758,33 @@
    "fonte": "Passageiro de Primeira",
    "data": "Fri, 20 Nov 2026 20:00:54 +0000",
    "lido_em": "2026-11-20T18:16-03:00"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?p=648516",
+   "titulo": "Só 155 metros! Beco no Rio de Janeiro entra na lista das ruas mais descoladas do mundo em 2026",
+   "link": "https://www.melhoresdestinos.com.br/ruas-mais-descoladas-mundo-2026.html",
+   "texto": "O Beco do Bragança, uma pequena passagem no Centro do Rio de Janeiro, acaba de conquistar o 11º lugar na lista das 28 ruas mais legais do mundo em 2026, divulgada pela revista britânica Time Out. Cercado por casarões históricos, o endereço ganhou destaque pela concentração de bares, galerias de arte e lojas de design.…",
+   "fonte": "Melhores Destinos",
+   "data": "Thu, 19 Nov 2026 21:18:31 +0000",
+   "lido_em": "2026-11-21T07:16-03:00"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?p=648390",
+   "titulo": "Brasil emplaca 4 aeroportos nos melhores do mundo da revista TIME – veja quais são!",
+   "link": "https://www.melhoresdestinos.com.br/melhores-aeroportos-do-mundo-time.html",
+   "texto": "Quatro aeroportos brasileiros estão no top 10 dos melhores terminais do mundo, divulgado pela renomada revista americana TIME. Brasília, Belo Horizonte, Curitiba e Florianópolis apareceram como destaques nas categorias de aeroportos de médio e pequeno porte. O levantamento inédito da TIME, em parceria com a empresa de dados Statista, reúne uma pesquisa com passageiros em…",
+   "fonte": "Melhores Destinos",
+   "data": "Thu, 19 Nov 2026 23:00:53 +0000",
+   "lido_em": "2026-11-21T07:16-03:00"
+  },
+  {
+   "id": "https://www.melhoresdestinos.com.br/?post_type=promocao&p=648700",
+   "titulo": "Feriadão de ofertas ✈️ Gol, Latam e Azul têm passagens nacionais a partir de R$ 276 ida e volta!",
+   "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-nacionais-19-11-26",
+   "texto": "Amanhã temos mais um feriado nacional, e que forma melhor de começar ele que pensando no próximo destino? A Gol e Azul já estão com ofertas antecipadas de Black Friday, e claro pesquisamos também os menores preços da Latam, com voos a partir de R$ 276 ida e volta! São mais de 150 mil passagens…",
+   "fonte": "Melhores Destinos",
+   "data": "Thu, 19 Nov 2026 23:59:15 +0000",
+   "lido_em": "2026-11-21T07:16-03:00"
   }
  ],
  "rotas": [],
@@ -1801,9 +1804,42 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-20T23:33-03:00",
+  "atualizado": "2026-11-21T07:16-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Feriadão de ofertas ✈️ Gol, Latam e Azul têm passagens nacionais a partir de R$ 276 ida e volta!",
+    "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-nacionais-19-11-26",
+    "fonte": "Melhores Destinos",
+    "tipo": "indefinido",
+    "preco": 276.0,
+    "milhas": null,
+    "eh_milhas": false,
+    "bate": false,
+    "publicado": "2026-11-19T20:59-03:00"
+   },
+   {
+    "titulo": "Brasil emplaca 4 aeroportos nos melhores do mundo da revista TIME – veja quais são!",
+    "link": "https://www.melhoresdestinos.com.br/melhores-aeroportos-do-mundo-time.html",
+    "fonte": "Melhores Destinos",
+    "tipo": "nacional",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": false,
+    "bate": false,
+    "publicado": "2026-11-19T20:00-03:00"
+   },
+   {
+    "titulo": "Só 155 metros! Beco no Rio de Janeiro entra na lista das ruas mais descoladas do mundo em 2026",
+    "link": "https://www.melhoresdestinos.com.br/ruas-mais-descoladas-mundo-2026.html",
+    "fonte": "Melhores Destinos",
+    "tipo": "nacional",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": false,
+    "bate": false,
+    "publicado": "2026-11-19T18:18-03:00"
+   },
    {
     "titulo": "Lufthansa anuncia nova Classe Executiva para rotas de curta e média distância",
     "link": "https://passageirodeprimeira.com/lufthansa-anuncia-nova-classe-executiva-para-rotas-de-curta-e-media-distancia/",
@@ -2859,17 +2895,6 @@
     "eh_milhas": true,
     "bate": false,
     "publicado": "2026-11-18T08:00-03:00"
-   },
-   {
-    "titulo": "Parceria entre Livelo e Avenue oferece até 10 mil pontos para novos clientes",
-    "link": "https://passageirodeprimeira.com/parceria-entre-livelo-avenue-oferece-ate-10-mil-pontos-novos-clientes/",
-    "fonte": "Passageiro de Primeira",
-    "tipo": "internacional",
-    "preco": null,
-    "milhas": 10000.0,
-    "eh_milhas": true,
-    "bate": false,
-    "publicado": "2026-11-17T18:30-03:00"
    }
   ],
   "fontes": {
