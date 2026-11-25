@@ -849,19 +849,11 @@
   "https://passageirodeprimeira.com/?p=584854",
   "https://passageirodeprimeira.com/?p=583602",
   "https://passageirodeprimeira.com/?p=584658",
-  "https://passageirodeprimeira.com/?p=584212"
+  "https://passageirodeprimeira.com/?p=584212",
+  "https://pontospravoar.com/?p=151467"
  ],
  "feeds_iniciados": true,
  "recentes": [
-  {
-   "id": "https://passageirodeprimeira.com/?p=583576",
-   "titulo": "5 sugestões de trechos para destinos de praia a partir de 4.200 pontos Azul + taxas",
-   "link": "https://passageirodeprimeira.com/5-sugestoes-de-trechos-para-destinos-de-praia-a-partir-de-4-200-pontos-azul-taxas/",
-   "texto": "Quer viajar para a praia? Separamos 5 sugestões de resgates com a Azul a partir de 4.200 pontos + taxas, incluindo trechos como Salvador a Porto Seguro e Curitiba ao Rio de Janeiro. É hora de planejar sua próxima viagem! O post 5 sugestões de trechos para destinos de praia a partir de 4.200 pontos Azul + taxas apareceu primeiro em Passageiro de Primeira .",
-   "fonte": "Passageiro de Primeira",
-   "data": "Sun, 22 Nov 2026 12:00:07 +0000",
-   "lido_em": "2026-11-22T14:59-03:00"
-  },
   {
    "id": "https://passageirodeprimeira.com/?p=583495",
    "titulo": "Último dia! Receba até 104 mil pontos ao assinar o Clube Livelo Especial com nosso cupom exclusivo",
@@ -1932,6 +1924,15 @@
    "fonte": "Passageiro de Primeira",
    "data": "Tue, 24 Nov 2026 22:30:54 +0000",
    "lido_em": "2026-11-24T19:47-03:00"
+  },
+  {
+   "id": "https://pontospravoar.com/?p=151467",
+   "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 24 de novembro de 2026",
+   "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-24-novembro-2026/",
+   "texto": "A terça-feira traz novas oportunidades para quem acompanha o universo de pontos, milhas e viagens. Nossa equipe reuniu os principais destaques do dia para facilitar sua busca por boas promoções. Confira o Radar PPV! Promoções de acúmulo de pontos ¹ pontos por dólar. Promoções de transferência de pontos Compra de pontos com desconto Compra de…",
+   "fonte": "Pontos pra Voar",
+   "data": "Tue, 24 Nov 2026 23:00:38 +0000",
+   "lido_em": "2026-11-25T02:22-03:00"
   }
  ],
  "rotas": [],
@@ -1951,9 +1952,20 @@
  "alertas": [],
  "bot_username": "vm_passagens_bot",
  "painel": {
-  "atualizado": "2026-11-24T19:47-03:00",
+  "atualizado": "2026-11-25T02:22-03:00",
   "bot": "vm_passagens_bot",
   "promocoes": [
+   {
+    "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 24 de novembro de 2026",
+    "link": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-24-novembro-2026/",
+    "fonte": "Pontos pra Voar",
+    "tipo": "bonus",
+    "preco": null,
+    "milhas": null,
+    "eh_milhas": true,
+    "bate": false,
+    "publicado": "2026-11-24T20:00-03:00"
+   },
    {
     "titulo": "É Black! 50% OFF: o maior desconto da história dos Alertas do PP",
     "link": "https://passageirodeprimeira.com/e-black-50-off-o-maior-desconto-da-historia-dos-alertas-do-pp/",
@@ -3042,17 +3054,6 @@
     "eh_milhas": true,
     "bate": false,
     "publicado": "2026-11-22T10:00-03:00"
-   },
-   {
-    "titulo": "5 sugestões de trechos para destinos de praia a partir de 4.200 pontos Azul + taxas",
-    "link": "https://passageirodeprimeira.com/5-sugestoes-de-trechos-para-destinos-de-praia-a-partir-de-4-200-pontos-azul-taxas/",
-    "fonte": "Passageiro de Primeira",
-    "tipo": "nacional",
-    "preco": null,
-    "milhas": 4200.0,
-    "eh_milhas": true,
-    "bate": false,
-    "publicado": "2026-11-22T09:00-03:00"
    }
   ],
   "fontes": {
